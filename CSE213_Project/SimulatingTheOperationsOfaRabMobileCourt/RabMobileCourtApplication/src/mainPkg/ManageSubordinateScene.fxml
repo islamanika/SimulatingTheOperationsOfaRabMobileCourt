@@ -76,12 +76,12 @@
          </stroke>
       </Line>
       <Line endX="-45.20001220703125" endY="121.39999389648438" layoutX="453.0" layoutY="275.0" startX="-45.20001220703125" startY="-45.79998779296875" strokeWidth="2.0" />
-      <Button layoutX="628.0" layoutY="545.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 2; -fx-border-color: black; -fx-background-color: #4dabf5;" text="Return Home">
+      <Button layoutX="622.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 2; -fx-border-color: black; -fx-background-color: #4dabf5;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="122.0" layoutY="545.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 2; -fx-border-color: black; -fx-background-color: #4dabf5;" text="Save Information">
+      <Button layoutX="126.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 2; -fx-border-color: black; -fx-background-color: #4dabf5;" text="Save Information">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
