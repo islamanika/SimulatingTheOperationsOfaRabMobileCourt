@@ -1,8 +1,10 @@
 package mainPkg;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.Optional;
@@ -53,7 +55,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        crimeTypeCB.getItems().addAll("Food Adulteration", "Over-Price", "Fake Products", "False Advertisement");
+        crimeTypeCB.getItems().addAll("Food Adulteration", "Over-Priced", "Fake Products", "False Advertisement");
     }
 
     private boolean isInteger(String input) {
@@ -72,7 +74,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
             Alert a = new Alert(Alert.AlertType.WARNING);
             a.setTitle("Warning Alert");
             a.setHeaderText("Input Data Type Not Allowed");
-            a.setContentText("Warrant ID must be an integer!");
+            a.setContentText("Occurance Amount must be an integer!");
             a.showAndWait();
             return;
         }
@@ -82,7 +84,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
             Alert a = new Alert(Alert.AlertType.WARNING);
             a.setTitle("Warning Alert");
             a.setHeaderText("Input Data Type Not Allowed");
-            a.setContentText("Officer Badge Number must be an integer!");
+            a.setContentText("Occurance Year must be an integer for example 2023!");
             a.showAndWait();
             return;
         }
@@ -143,6 +145,39 @@ public class AnalyzCrimActivSceneController implements Initializable {
 
     @FXML
     private void viewSavedInfoButtonOnClick(ActionEvent event) {
+        
+        viewSavedInfoTextArea.setText("");
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("CrimActivityObject.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            
+            Criminal_Activity ca;
+            try {
+                viewSavedInfoTextArea.setText("");
+                while (true) {
+                    ca = (Criminal_Activity) ois.readObject();
+                    System.out.println(ca.toString());
+                    viewSavedInfoTextArea.appendText(ca.toString());
+                }
+            }//end of nested try//end of nested try//end of nested try//end of nested try
+            catch (IOException | ClassNotFoundException e) {
+                //
+            }//nested catch     
+            viewSavedInfoTextArea.appendText("All objects loaded successfully from bin file.\n");
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+        }
     }
 
     @FXML

@@ -1,6 +1,8 @@
 package mainPkg;
 
-public class Criminal_Activity {
+import java.io.Serializable;
+
+public class Criminal_Activity implements Serializable{
 
     public int occuranceAmount, occuranceYear;
     public String crimeType;
@@ -37,7 +39,7 @@ public class Criminal_Activity {
 
     @Override
     public String toString() {
-        return "Criminal_Activity{" + "occuranceAmount=" + occuranceAmount + ", occuranceYear=" + occuranceYear + ", crimeType=" + crimeType + '}';
+        return "Criminal_Activity: " + "Occurance Amount= " + occuranceAmount + ", Occurance Year= " + occuranceYear + ", Crime Type= " + crimeType + "\n";
     }
 
 }
