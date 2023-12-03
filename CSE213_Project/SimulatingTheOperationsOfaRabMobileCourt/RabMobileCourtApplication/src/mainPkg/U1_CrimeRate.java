@@ -32,6 +32,16 @@ public class U1_CrimeRate {
     public void setDistrictName(String districtName) {
         this.districtName = districtName;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("U1_CrimeRate{");
+        sb.append("crimeCount=").append(crimeCount);
+        sb.append(", districtName=").append(districtName);
+        sb.append('}');
+        return sb.toString();
+    }
     
     
     
