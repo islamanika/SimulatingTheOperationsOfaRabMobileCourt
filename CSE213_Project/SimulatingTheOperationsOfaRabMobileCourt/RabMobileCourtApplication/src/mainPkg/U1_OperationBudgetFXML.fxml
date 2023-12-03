@@ -15,6 +15,7 @@
          </font>
       </Label>
       <PieChart fx:id="budgetPieChart" layoutX="140.0" layoutY="100.0" />
-      <Button layoutX="667.0" layoutY="533.0" mnemonicParsing="false" onAction="#returnButtonOnClick" text="Return " />
+      <Button layoutX="571.0" layoutY="534.0" mnemonicParsing="false" onAction="#generateButtonOnClick" text="Generate" />
+      <Button layoutX="683.0" layoutY="534.0" mnemonicParsing="false" onAction="#returnButtonOnClick" text="Return " />
    </children>
 </AnchorPane>

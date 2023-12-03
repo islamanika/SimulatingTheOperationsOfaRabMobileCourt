@@ -98,4 +98,8 @@ public class U1_OperationBudgetFXMLController implements Initializable {
         someStage.show();
     }
 
+    @FXML
+    private void generateButtonOnClick(ActionEvent event) {
+    }
+
 }
