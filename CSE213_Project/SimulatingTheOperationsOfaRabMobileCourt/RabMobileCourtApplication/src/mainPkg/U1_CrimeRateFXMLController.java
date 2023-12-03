@@ -27,6 +27,8 @@ public class U1_CrimeRateFXMLController implements Initializable {
 
     @FXML
     private PieChart pieChart;
+    @FXML
+    private TextArea crimeRateTextArea;
 
     /**
      * Initializes the controller class.
@@ -50,12 +52,13 @@ public class U1_CrimeRateFXMLController implements Initializable {
         someStage.show();
     }
 
-    @FXML
-    private void loadOperationExecutedFileButtonOnclick(ActionEvent event) {
-    }
 
     @FXML
     private void pieChartViewButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void loadButtonOnclick(ActionEvent event) {
     }
     
 }
