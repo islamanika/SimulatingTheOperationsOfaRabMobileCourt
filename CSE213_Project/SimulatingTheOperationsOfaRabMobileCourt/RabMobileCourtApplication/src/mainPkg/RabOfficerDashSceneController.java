@@ -76,7 +76,7 @@ public class RabOfficerDashSceneController implements Initializable {
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Log_In_Scene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("newLogInScene.fxml"));
         Parent secondRoot = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));
