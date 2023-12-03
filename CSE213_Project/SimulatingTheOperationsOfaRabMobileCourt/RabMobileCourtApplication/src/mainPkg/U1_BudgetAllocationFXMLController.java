@@ -7,6 +7,8 @@ package mainPkg;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -42,13 +45,18 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private ComboBox<String> operationTypeComboBox;
     @FXML
     private ComboBox<String> placeComboBox;
+    
+    ObservableList<U1_Budget> budgetList = FXCollections.observableArrayList();
 
-    /**
-     * Initializes the controller class.
-     */
+    //budget;operationtype, operationPlace
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) {  
+        operationTypeComboBox.getItems().addAll("Social Justice", "Terrorism", "Public Safety");
+        placeComboBox.getItems().addAll("Mirpur", "Bashundhara", "ECB", "Dhanmondi", "Banani");
+        operationTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationtype"));
+        placeTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationPlace"));
+        budgetTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, Integer>("budget"));
+        
     }    
 
     @FXML

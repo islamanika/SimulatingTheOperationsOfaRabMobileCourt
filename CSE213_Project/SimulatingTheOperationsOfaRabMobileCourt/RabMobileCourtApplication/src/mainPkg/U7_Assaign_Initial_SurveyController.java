@@ -76,7 +76,7 @@ public class U7_Assaign_Initial_SurveyController implements Initializable {
         }
         
         try{
-            File file=new File("User7_All_File//Initial_Survey.txt");
+            File file=new File("User7_All_File//assignrd_Initial_Survey_File//assigned_Initial_Survey.txt");
             if(!file.exists())file.createNewFile();
             FileWriter fileWriter=new FileWriter(file,true);
             
