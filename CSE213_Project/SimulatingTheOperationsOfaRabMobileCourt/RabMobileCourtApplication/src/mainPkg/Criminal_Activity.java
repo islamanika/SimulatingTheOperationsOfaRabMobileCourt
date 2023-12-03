@@ -2,22 +2,8 @@ package mainPkg;
 
 public class Criminal_Activity {
 
-    public String crimeType;
     public int occuranceAmount, occuranceYear;
-
-    public Criminal_Activity(String crimeType, int occuranceAmount, int occuranceYear) {
-        this.crimeType = crimeType;
-        this.occuranceAmount = occuranceAmount;
-        this.occuranceYear = occuranceYear;
-    }
-
-    public String getCrimeType() {
-        return crimeType;
-    }
-
-    public void setCrimeType(String crimeType) {
-        this.crimeType = crimeType;
-    }
+    public String crimeType;
 
     public int getOccuranceAmount() {
         return occuranceAmount;
@@ -35,9 +21,23 @@ public class Criminal_Activity {
         this.occuranceYear = occuranceYear;
     }
 
+    public String getCrimeType() {
+        return crimeType;
+    }
+
+    public void setCrimeType(String crimeType) {
+        this.crimeType = crimeType;
+    }
+
+    public Criminal_Activity(int occuranceAmount, int occuranceYear, String crimeType) {
+        this.occuranceAmount = occuranceAmount;
+        this.occuranceYear = occuranceYear;
+        this.crimeType = crimeType;
+    }
+
     @Override
     public String toString() {
-        return "Criminal_Activity{" + "crimeType=" + crimeType + ", occuranceAmount=" + occuranceAmount + ", occuranceYear=" + occuranceYear + '}';
+        return "Criminal_Activity{" + "occuranceAmount=" + occuranceAmount + ", occuranceYear=" + occuranceYear + ", crimeType=" + crimeType + '}';
     }
 
 }
