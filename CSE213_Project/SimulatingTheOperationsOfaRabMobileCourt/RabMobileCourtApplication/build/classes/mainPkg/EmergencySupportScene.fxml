@@ -35,20 +35,20 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="288.0" layoutY="416.0" prefHeight="26.0" prefWidth="186.0" />
-      <TextField layoutX="288.0" layoutY="452.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="reqIdTextField" layoutX="288.0" layoutY="416.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="reqNumOfSubTextField" layoutX="288.0" layoutY="452.0" prefHeight="26.0" prefWidth="186.0" />
       <Label layoutX="56.0" layoutY="493.0" text="Estimated Time of Arrival" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="288.0" layoutY="488.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="estimTimeOfArrivTextField" layoutX="288.0" layoutY="488.0" prefHeight="26.0" prefWidth="186.0" />
       <Button layoutX="56.0" layoutY="541.0" mnemonicParsing="false" onAction="#respondToEmerSupOnClick" prefHeight="26.0" prefWidth="198.0" style="-fx-border-color: orange; -fx-border-width: 2;" text="Respond">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TextArea layoutX="497.0" layoutY="190.0" prefHeight="322.0" prefWidth="304.0" style="-fx-border-color: black;" />
+      <TextArea fx:id="responseTextArea" layoutX="497.0" layoutY="190.0" prefHeight="322.0" prefWidth="304.0" style="-fx-border-color: black;" />
       <Button layoutX="604.0" layoutY="541.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" prefHeight="26.0" prefWidth="198.0" style="-fx-border-color: green; -fx-border-width: 2;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />
