@@ -1,5 +1,5 @@
-Dummy 1#123
-Dummy 2#231
-Dummy3#213
-Dummy 4#132
-Dummy 5#76
+hospital#7
+pharmacy#6
+resturent#12
+coaching centre#3
+pasport Office#2
