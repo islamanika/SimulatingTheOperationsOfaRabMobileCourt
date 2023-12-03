@@ -89,6 +89,7 @@ public class U7_View_Survey_ReportController implements Initializable {
             System.out.println("Survey Id (Integer): " + parsedSurveyId);
         } else {
             showAlert("Invalid Survey Id", "Survey Id must be an integer.");
+            return;
         }
         
         String month=surveyMonthComboBox.getValue();
