@@ -67,7 +67,7 @@ public class MagisIssueSerWarSceneController implements Initializable {
 
     @FXML
     private void loadWarReqButtonOnClick(ActionEvent event) {
-        
+
         ObjectInputStream ois = null;
         try {
             Search_Warrant s;
@@ -99,10 +99,14 @@ public class MagisIssueSerWarSceneController implements Initializable {
 
     @FXML
     private void viewDraftButtonOnClick(ActionEvent event) {
+        Issued_Warrant draftWarrant = new Issued_Warrant(Integer.parseInt(warIdTextField.getText()), Integer.parseInt(rabOffiIdTextField.getText()), instiNameTextField.getText(), Integer.parseInt(numOfSubTextField.getText()), usersNameTextField.getText(), datePicker.getValue());
+        
+        viewDraftTextArea.setText(draftWarrant.toString());
     }
 
     @FXML
     private void issueWarButtonOnClick(ActionEvent event) {
+
     }
 
 }
