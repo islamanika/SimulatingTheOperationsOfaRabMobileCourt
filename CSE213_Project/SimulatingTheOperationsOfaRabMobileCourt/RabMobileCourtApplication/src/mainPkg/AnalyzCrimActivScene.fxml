@@ -73,6 +73,9 @@
          </font>
       </Button>
       <TextField fx:id="inYrOfCriTextField" layoutX="377.0" layoutY="496.0" prefHeight="30.0" prefWidth="126.0" promptText="Input Year of Crime" />
-      <Label fx:id="outputLabel" layoutX="578.0" layoutY="504.0" prefHeight="78.0" prefWidth="234.0" style="-fx-border-color: black;" />
+      <Label fx:id="outputLabel" layoutX="578.0" layoutY="504.0" prefHeight="78.0" prefWidth="234.0" style="-fx-border-color: black;" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

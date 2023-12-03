@@ -214,6 +214,41 @@ public class AnalyzCrimActivSceneController implements Initializable {
 
     @FXML
     private void viewMaxMinActButtonOnClick(ActionEvent event) {
+        // Validate input
+        if (!isInteger(inYrOfCriTextField.getText())) {
+            showValidationErrorAlert("Year must be an integer!");
+            return;
+        }
+
+        int yearToFind = Integer.parseInt(inYrOfCriTextField.getText());
+
+        // Variables to store min and max occurrences
+        int minOccurrence = Integer.MAX_VALUE;
+        int maxOccurrence = Integer.MIN_VALUE;
+
+        File f = new File("CrimActivityObject.bin");
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+            while (true) {
+                Criminal_Activity ca = (Criminal_Activity) ois.readObject();
+                if (ca.getOccuranceYear() == yearToFind) {
+                    int occurrence = ca.getOccuranceAmount();
+                    // Update min and max occurrences
+                    minOccurrence = Math.min(minOccurrence, occurrence);
+                    maxOccurrence = Math.max(maxOccurrence, occurrence);
+                }
+            }
+        } catch (EOFException e) {
+            // End of file reached, do nothing
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(AnalyzCrimActivSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (minOccurrence == Integer.MAX_VALUE && maxOccurrence == Integer.MIN_VALUE) {
+            // No data found for the specified year
+            outputLabel.setText("No data found for the specified year.");
+        } else {
+            outputLabel.setText("Minimum Occurrence: " + minOccurrence + ", Maximum Occurrence: " + maxOccurrence);
+        }
     }
 
     private void showInfoAlertAfterConfirmation(String str) {
@@ -223,4 +258,11 @@ public class AnalyzCrimActivSceneController implements Initializable {
         a.showAndWait();
     }
 
+    private void showValidationErrorAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Validation Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }

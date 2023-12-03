@@ -11,7 +11,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 //Limon Update  // anika update
-        Parent root = FXMLLoader.load(getClass().getResource("MagistrateDashScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("newLogInScene.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

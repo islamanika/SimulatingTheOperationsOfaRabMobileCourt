@@ -24,7 +24,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="703.0" layoutY="587.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
+      <Button layoutX="706.0" layoutY="593.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -47,7 +47,7 @@
          </font>
       </Label>
       <ComboBox fx:id="crimeTypeCB" layoutX="173.0" layoutY="117.0" prefHeight="26.0" prefWidth="126.0" />
-      <BarChart fx:id="anaCriActBarChart" layoutX="328.0" layoutY="87.0" prefHeight="345.0" prefWidth="500.0" title="Criminal Activity">
+      <BarChart fx:id="anaCriActBarChart" layoutX="328.0" layoutY="77.0" prefHeight="367.0" prefWidth="500.0" title="Criminal Activity">
         <xAxis>
           <CategoryAxis label="Crime Type" prefHeight="17.0" prefWidth="444.0" side="BOTTOM" fx:id="xAxis" />
         </xAxis>
@@ -62,17 +62,20 @@
          </font>
       </Button>
       <Line endX="45.5999755859375" endY="313.4000244140625" layoutX="282.0" layoutY="309.0" startX="45.5999755859375" startY="-226.8000030517578" strokeWidth="2.0" />
-      <Button layoutX="375.0" layoutY="433.0" mnemonicParsing="false" onAction="#loadBarChartButtonOnClick" text="Load Bar Chart">
+      <Button layoutX="377.0" layoutY="449.0" mnemonicParsing="false" onAction="#loadBarChartButtonOnClick" text="Load Bar Chart">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="375.0" layoutY="520.0" mnemonicParsing="false" onAction="#viewMaxMinActButtonOnClick" prefHeight="55.0" prefWidth="126.0" text="View Max &amp; Min Activity" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="377.0" layoutY="536.0" mnemonicParsing="false" onAction="#viewMaxMinActButtonOnClick" prefHeight="55.0" prefWidth="126.0" text="View Max &amp; Min Activity" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="inYrOfCriTextField" layoutX="375.0" layoutY="480.0" prefHeight="30.0" prefWidth="126.0" promptText="Input Year of Crime" />
-      <Label fx:id="outputLabel" layoutX="568.0" layoutY="481.0" prefHeight="78.0" prefWidth="234.0" style="-fx-border-color: black;" />
+      <TextField fx:id="inYrOfCriTextField" layoutX="377.0" layoutY="496.0" prefHeight="30.0" prefWidth="126.0" promptText="Input Year of Crime" />
+      <Label fx:id="outputLabel" layoutX="578.0" layoutY="504.0" prefHeight="78.0" prefWidth="234.0" style="-fx-border-color: black;" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>
