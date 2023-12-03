@@ -1,5 +1,6 @@
 package mainPkg;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
@@ -38,7 +40,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
     @FXML
     private ComboBox<String> crimeTypeCB;
     @FXML
-    private BarChart<?, ?> anaCriActBarChart;
+    private BarChart<String, Number> anaCriActBarChart;
     @FXML
     private NumberAxis yAxis;
     @FXML
@@ -56,6 +58,9 @@ public class AnalyzCrimActivSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         crimeTypeCB.getItems().addAll("Food Adulteration", "Over-Priced", "Fake Products", "False Advertisement");
+
+        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+
     }
 
     private boolean isInteger(String input) {
@@ -145,7 +150,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
 
     @FXML
     private void viewSavedInfoButtonOnClick(ActionEvent event) {
-        
+
         viewSavedInfoTextArea.setText("");
         File f = null;
         FileInputStream fis = null;
@@ -155,7 +160,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
             f = new File("CrimActivityObject.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
-            
+
             Criminal_Activity ca;
             try {
                 viewSavedInfoTextArea.setText("");
@@ -182,6 +187,29 @@ public class AnalyzCrimActivSceneController implements Initializable {
 
     @FXML
     private void loadBarChartButtonOnClick(ActionEvent event) {
+        // Clear existing data in the chart
+        anaCriActBarChart.getData().clear();
+
+        // Create a new series for the chart
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+
+        // Read data from the file and add it to the series
+        File f = new File("CrimActivityObject.bin");
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
+            while (true) {
+                Criminal_Activity ca = (Criminal_Activity) ois.readObject();
+                String crimeType = ca.getCrimeType();
+                int occurrence = ca.getOccuranceAmount();  // Use getOccuranceAmount()
+                series.getData().add(new XYChart.Data<>(crimeType, occurrence));
+            }
+        } catch (EOFException e) {
+            // End of file reached, do nothing
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(AnalyzCrimActivSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // Add the series to the chart
+        anaCriActBarChart.getData().add(series);
     }
 
     @FXML
