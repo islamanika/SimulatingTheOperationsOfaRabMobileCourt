@@ -19,12 +19,12 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="85.0" layoutY="154.0" mnemonicParsing="false" text="Load Cases">
+      <Button layoutX="85.0" layoutY="154.0" mnemonicParsing="false" onAction="#loadCasesButtonOnClick" text="Load Cases">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="85.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableView" layoutX="85.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
@@ -35,48 +35,48 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="577.0" layoutY="197.0" />
+      <TextField fx:id="caseIdTextField" layoutX="577.0" layoutY="197.0" />
       <Label layoutX="424.0" layoutY="238.0" text="Case Title:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="577.0" layoutY="235.0" />
+      <TextField fx:id="caseTitleTextField" layoutX="577.0" layoutY="235.0" />
       <Label layoutX="425.0" layoutY="277.0" text="Defendant ID:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="577.0" layoutY="274.0" />
+      <TextField fx:id="defIdTextField" layoutX="577.0" layoutY="274.0" />
       <Label layoutX="423.0" layoutY="316.0" text="Defendant Name:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="577.0" layoutY="313.0" />
+      <TextField fx:id="defNameTextField" layoutX="577.0" layoutY="313.0" />
       <Label layoutX="424.0" layoutY="357.0" prefWidth="127.0" text="Next Hearing Date:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="577.0" layoutY="354.0" prefHeight="26.0" prefWidth="150.0" />
+      <DatePicker fx:id="nextHearDatePicker" layoutX="577.0" layoutY="354.0" prefHeight="26.0" prefWidth="150.0" />
       <Label layoutX="419.0" layoutY="399.0" prefHeight="20.0" prefWidth="150.0" text="Proposed Court Room:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="577.0" layoutY="397.0" prefWidth="150.0" />
+      <ComboBox fx:id="propCourtRoomCB" layoutX="577.0" layoutY="397.0" prefWidth="150.0" />
       <Label layoutX="85.0" layoutY="533.0" prefHeight="20.0" prefWidth="141.0" text="View Hearing Details:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="594.0" layoutY="476.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Save Hearing Details">
+      <Button layoutX="594.0" layoutY="476.0" mnemonicParsing="false" onAction="#saveHearDetButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Save Hearing Details">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TextArea layoutX="236.0" layoutY="451.0" prefHeight="160.0" prefWidth="314.0" />
+      <TextArea fx:id="viewHearDetTextArea" layoutX="236.0" layoutY="451.0" prefHeight="160.0" prefWidth="314.0" />
       <Button layoutX="617.0" layoutY="553.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />

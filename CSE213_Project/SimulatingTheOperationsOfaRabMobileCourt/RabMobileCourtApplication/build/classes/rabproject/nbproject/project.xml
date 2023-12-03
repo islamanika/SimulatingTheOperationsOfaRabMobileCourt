@@ -13,8 +13,7 @@
             </extension>
         </buildExtensions>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-            <name>RABproject</name>
-            <explicit-platform explicit-source-supported="true"/>
+            <name>rabproject</name>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
