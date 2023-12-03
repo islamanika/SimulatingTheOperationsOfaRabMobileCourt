@@ -68,7 +68,7 @@ public class RabOfficerDashSceneController implements Initializable {
 
     @FXML
     private void goToSubManageSceneOnClick(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ManageSubordinateScene.fxml"));
         Parent secondRoot = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));

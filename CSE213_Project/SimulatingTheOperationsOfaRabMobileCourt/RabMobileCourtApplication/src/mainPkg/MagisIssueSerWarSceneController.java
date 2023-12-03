@@ -1,7 +1,10 @@
 package mainPkg;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,24 +18,25 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class MagisIssueSerWarSceneController implements Initializable {
 
     @FXML
-    private TableView<?> warReqTable;
+    private TableView<Search_Warrant> warReqTable;
     @FXML
-    private TableColumn<?, ?> warIdCol;
+    private TableColumn<Search_Warrant, Integer> warIdCol;
     @FXML
-    private TableColumn<?, ?> nameInstCol;
+    private TableColumn<Search_Warrant, String> nameInstCol;
     @FXML
-    private TableColumn<?, ?> typeInstCol;
+    private TableColumn<Search_Warrant, String> typeInstCol;
     @FXML
-    private TableColumn<?, ?> propDateOfSerCol;
+    private TableColumn<Search_Warrant, LocalDate> propDateOfSerCol;
     @FXML
-    private TableColumn<?, ?> badgeNumCol;
+    private TableColumn<Search_Warrant, Integer> badgeNumCol;
     @FXML
-    private TableColumn<?, ?> serReasCol;
+    private TableColumn<Search_Warrant, String> serReasCol;
     @FXML
     private TextField warIdTextField;
     @FXML
@@ -48,17 +52,41 @@ public class MagisIssueSerWarSceneController implements Initializable {
     @FXML
     private TextArea viewDraftTextArea;
 
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        warIdCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, Integer>("warrantId"));
+        nameInstCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, String>("institutionName"));
+        typeInstCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, String>("institutionType"));
+        propDateOfSerCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, LocalDate>("searchDate"));
+        badgeNumCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, Integer>("badgeNumber"));
+        serReasCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, String>("reasonForSearch"));
     }
 
     @FXML
     private void loadWarReqButtonOnClick(ActionEvent event) {
+        
+        ObjectInputStream ois = null;
+        try {
+            Search_Warrant s;
+            ois = new ObjectInputStream(new FileInputStream("SerWarObjects.bin"));
+            s = (Search_Warrant) ois.readObject();
+            warReqTable.getItems().add(s);
+            s = (Search_Warrant) ois.readObject();
+            warReqTable.getItems().add(s);
+
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            ex.printStackTrace();
+        }
     }
 
     @FXML

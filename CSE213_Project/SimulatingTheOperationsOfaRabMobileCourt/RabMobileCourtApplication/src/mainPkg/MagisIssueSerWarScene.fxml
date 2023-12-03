@@ -38,13 +38,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="warIdTextField" layoutX="172.0" layoutY="370.0" />
+      <TextField fx:id="warIdTextField" layoutX="162.0" layoutY="373.0" />
       <Label layoutX="38.0" layoutY="408.0" text="Institution Name :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="instiNameTextField" layoutX="172.0" layoutY="404.0" />
+      <TextField fx:id="instiNameTextField" layoutX="162.0" layoutY="407.0" />
       <Label layoutX="380.0" layoutY="374.0" text=" ID of the RAB Officer in charge :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
