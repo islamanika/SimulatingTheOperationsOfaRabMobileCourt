@@ -141,7 +141,7 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private void pieChartButtonOnClick(ActionEvent event) throws IOException {
 
         Parent root = null;
-        FXMLLoader someLoader = new FXMLLoader(getClass().getResource("DistrictOfficerdashBoardFXML.fxml"));
+        FXMLLoader someLoader = new FXMLLoader(getClass().getResource("U1_OperationBudgetFXML.fxml"));
         root = (Parent) someLoader.load();
         Scene someScene = new Scene(root);
 
