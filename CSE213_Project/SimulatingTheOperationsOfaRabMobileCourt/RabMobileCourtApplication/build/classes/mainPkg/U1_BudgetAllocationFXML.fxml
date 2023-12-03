@@ -11,11 +11,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d7ccc8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPkg.U1_BudgetAllocationFXMLController">
    <children>
-      <Button layoutX="232.0" layoutY="453.0" mnemonicParsing="false" onAction="#allocateBudgetOnClick" prefHeight="30.0" prefWidth="144.0" style="-fx-background-color: #8d6e63;" text="Allocate Budget">
+      <Button layoutX="126.0" layoutY="453.0" mnemonicParsing="false" onAction="#allocateBudgetOnClick" prefHeight="30.0" prefWidth="144.0" style="-fx-background-color: #8d6e63;" text="Allocate Budget">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="432.0" layoutY="453.0" mnemonicParsing="false" onAction="#saveToFileOnClick" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #8d6e63;" text="Budget Save To File">
+      <Button layoutX="355.0" layoutY="453.0" mnemonicParsing="false" onAction="#saveToFileOnClick" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #8d6e63;" text="Budget Save To File">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
@@ -30,8 +30,8 @@
             <TableColumn fx:id="budgetTableCol" prefWidth="251.0" text="Budget" />
         </columns>
       </TableView>
-      <ComboBox fx:id="operationTypeComboBox" layoutX="143.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" />
-      <ComboBox fx:id="placeComboBox" layoutX="336.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" />
+      <ComboBox fx:id="operationTypeComboBox" layoutX="120.0" layoutY="179.0" prefHeight="31.0" prefWidth="155.0" />
+      <ComboBox fx:id="placeComboBox" layoutX="322.0" layoutY="179.0" prefHeight="31.0" prefWidth="137.0" />
       <Label layoutX="163.0" layoutY="149.0" prefHeight="20.0" prefWidth="69.0" text="Operation">
          <font>
             <Font name="System Bold Italic" size="14.0" />
@@ -48,5 +48,15 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
+      <Label layoutX="671.0" layoutY="185.0" text="Tk">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="594.0" layoutY="453.0" mnemonicParsing="false" onAction="#pieChartButtonOnClick" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #8d6e63;" text="Generate Pie Chart">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

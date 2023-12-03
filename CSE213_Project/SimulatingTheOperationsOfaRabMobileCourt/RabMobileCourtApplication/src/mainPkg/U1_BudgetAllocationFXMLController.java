@@ -4,9 +4,14 @@
  */
 package mainPkg;
 
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,50 +51,78 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private ComboBox<String> operationTypeComboBox;
     @FXML
     private ComboBox<String> placeComboBox;
-    
+
     ObservableList<U1_Budget> budgetList = FXCollections.observableArrayList();
 
-    //budget;operationtype, operationPlace
     @Override
-    public void initialize(URL url, ResourceBundle rb) {  
+    public void initialize(URL url, ResourceBundle rb) {
         operationTypeComboBox.getItems().addAll("Social Justice", "Terrorism", "Public Safety");
         placeComboBox.getItems().addAll("Mirpur", "Bashundhara", "ECB", "Dhanmondi", "Banani");
         operationTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationtype"));
         placeTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationPlace"));
         budgetTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, Integer>("budget"));
-        
-    }    
+
+    }
 
     @FXML
     private void allocateBudgetOnClick(ActionEvent event) {
-        
+
         try {
             String b = budgetTextField.getText();
             int budget = Integer.parseInt(b);
             String operationtype = operationTypeComboBox.getValue();
             String operationPlace = placeComboBox.getValue();
 
-            
-
             U1_Budget bdgt = new U1_Budget(budget, operationtype, operationPlace);
             budgetList.add(bdgt);
             budgetAllocationTableView.setItems(budgetList);
 
-            
-
-        }  catch(Exception err){
+        } catch (Exception err) {
             Alert error = new Alert(Alert.AlertType.ERROR);
             error.setTitle("Error Alert");
             error.setHeaderText("Fatal Error!");
             error.setContentText("Please fill all the fields proprly!");
             error.showAndWait();
         }
-        
-        
+
     }
 
     @FXML
     private void saveToFileOnClick(ActionEvent event) {
+
+        File f = null;
+        FileOutputStream fos = null;
+
+        DataOutputStream dos = null;
+
+        try {
+            f = new File("Budget.bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+            } else {
+                fos = new FileOutputStream(f);
+            }
+
+            dos = new DataOutputStream(fos);
+
+//            String b = budgetTextField.getText();
+//            int budget = Integer.parseInt(b);
+//            String operationtype = operationTypeComboBox.getValue();
+//            String operationPlace = placeComboBox.getValue();
+
+            for (U1_Budget bt : budgetList) {
+                dos.writeInt(bt.getBudget());
+                dos.writeUTF(bt.getOperationtype());
+                dos.writeUTF(bt.getOperationPlace());
+
+            }
+
+            
+
+        } catch (IOException e) {
+            Logger.getLogger(U1_BudgetAllocationFXMLController.class.getName()).log(Level.SEVERE, null, e);
+        }
+
     }
 
     @FXML
@@ -98,13 +131,23 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         FXMLLoader someLoader = new FXMLLoader(getClass().getResource("DistrictOfficerdashBoardFXML.fxml"));
         root = (Parent) someLoader.load();
         Scene someScene = new Scene(root);
-        
 
-        
-        Stage someStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         someStage.setScene(someScene);
         someStage.show();
     }
 
-    
+    @FXML
+    private void pieChartButtonOnClick(ActionEvent event) throws IOException {
+
+        Parent root = null;
+        FXMLLoader someLoader = new FXMLLoader(getClass().getResource("U1_OperationBudgetFXML.fxml"));
+        root = (Parent) someLoader.load();
+        Scene someScene = new Scene(root);
+
+        Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        someStage.setScene(someScene);
+        someStage.show();
+    }
+
 }
