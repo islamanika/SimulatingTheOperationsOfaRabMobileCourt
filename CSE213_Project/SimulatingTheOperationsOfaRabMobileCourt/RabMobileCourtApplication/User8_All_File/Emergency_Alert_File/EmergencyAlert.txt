@@ -1,0 +1,12 @@
+emergancyAlertId : 123, 
+ institutionName : rwer, 
+institutionLocation : rewr, 
+alertReciever : Operations Administrator, 
+description : wee
+-----------------------
+emergancyAlertId : 123, 
+ institutionName : we, 
+institutionLocation : wer, 
+alertReciever : RAB Officer, 
+description : rew3
+-----------------------
