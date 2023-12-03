@@ -35,7 +35,7 @@ public class U8_Previously_Surveyed_Institution_ListController implements Initia
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try{
-        File file=new File("User8_All_File//survey_previously_Survey_File.txt");
+        File file=new File("User8_All_File//previously_Survey_Lit_File.txt");
         if(!file.exists())file.createNewFile();
         
         Scanner sc=new Scanner(file);
