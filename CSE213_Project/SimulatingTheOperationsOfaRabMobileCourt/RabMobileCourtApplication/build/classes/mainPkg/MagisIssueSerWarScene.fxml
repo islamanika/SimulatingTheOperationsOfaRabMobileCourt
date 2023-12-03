@@ -18,9 +18,9 @@
           <TableColumn fx:id="warIdCol" prefWidth="130.39999771118164" text="Search Warrent ID" />
           <TableColumn fx:id="nameInstCol" minWidth="8.0" prefWidth="153.59999084472656" text="Name of The Institution" />
             <TableColumn fx:id="typeInstCol" minWidth="3.20001220703125" prefWidth="124.79998779296875" text="Type of Institution" />
-            <TableColumn fx:id="propDateOfSerCol" prefWidth="139.20001220703125" text="Proposed Search Date" />
-            <TableColumn fx:id="badgeNumCol" prefWidth="153.60003662109375" text="Officer Badge Number" />
-            <TableColumn fx:id="serReasCol" prefWidth="116.7999267578125" text="Search Reason" />
+            <TableColumn fx:id="badgeNumCol" prefWidth="138.4000244140625" text="Officer Badge Number" />
+            <TableColumn fx:id="propDateOfSerCol" prefWidth="133.5999755859375" text="Proposed Search Date" />
+            <TableColumn fx:id="serReasCol" prefWidth="134.4000244140625" text="Search Reason" />
         </columns>
       </TableView>
       <Label layoutX="273.0" layoutY="25.0" text="ISSUE SEARCH WARRANT" textFill="WHITE">
