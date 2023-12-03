@@ -54,7 +54,6 @@ public class U1_OperationBudgetFXMLController implements Initializable {
 
                 while (dis.available() > 0) {
 
-                    String SavedZone, SavedBranch;
 
                     int budget;
                     String operationtype, operationPlace;
@@ -97,6 +96,10 @@ public class U1_OperationBudgetFXMLController implements Initializable {
         Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         someStage.setScene(someScene);
         someStage.show();
+    }
+
+    @FXML
+    private void generateButtonOnClick(ActionEvent event) {
     }
 
 }
