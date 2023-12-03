@@ -16,5 +16,25 @@ public class TimeextensionDetails {
         this.details = details;
         this.time = time;
     }
+
+    public int getCaseId() {
+        return caseId;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public String getCaseTitle() {
+        return caseTitle;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public String getTime() {
+        return time;
+    }
     
 }
