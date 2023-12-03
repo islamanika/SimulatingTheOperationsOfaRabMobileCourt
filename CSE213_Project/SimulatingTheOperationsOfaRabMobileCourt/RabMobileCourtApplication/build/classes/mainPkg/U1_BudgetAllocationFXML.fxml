@@ -59,7 +59,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <PieChart fx:id="budgetPieChart" layoutX="348.0" layoutY="85.0" prefHeight="433.0" prefWidth="438.0" />
+      <PieChart fx:id="budgetPieChart" layoutX="349.0" layoutY="84.0" prefHeight="433.0" prefWidth="438.0" />
       <Label layoutX="412.0" layoutY="8.0" prefHeight="9.0" prefWidth="311.0" text="Operation Budget PieChart">
          <font>
             <Font name="System Bold Italic" size="24.0" />
