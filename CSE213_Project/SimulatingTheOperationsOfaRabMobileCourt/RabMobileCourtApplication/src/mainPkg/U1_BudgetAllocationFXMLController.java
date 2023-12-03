@@ -14,7 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -26,11 +28,15 @@ import javafx.stage.Stage;
 public class U1_BudgetAllocationFXMLController implements Initializable {
 
     @FXML
-    private TextField operationNameTextField;
-    @FXML
     private TextField budgetTextField;
     @FXML
-    private TextArea budgetAllocationTextArea;
+    private TableView<U1_Budget> budgetAllocationTableView;
+    @FXML
+    private TableColumn<U1_Budget, String> operationTableCol;
+    @FXML
+    private TableColumn<U1_Budget, String> placeTableCol;
+    @FXML
+    private TableColumn<U1_Budget, Integer> budgetTableCol;
 
     /**
      * Initializes the controller class.
@@ -60,6 +66,14 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         Stage someStage = (Stage)((Node) event.getSource()).getScene().getWindow();
         someStage.setScene(someScene);
         someStage.show();
+    }
+
+    @FXML
+    private void operationTypeComboBox(ActionEvent event) {
+    }
+
+    @FXML
+    private void placeComboBox(ActionEvent event) {
     }
     
 }
