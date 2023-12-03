@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainPkg;
 
 import java.net.URL;
@@ -15,11 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author tabri
- */
 public class VerdictDetailsInfoSceneController implements Initializable {
 
     @FXML
@@ -45,7 +36,7 @@ public class VerdictDetailsInfoSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void saveVerDetailsButtonOnClick(ActionEvent event) {
@@ -62,5 +53,5 @@ public class VerdictDetailsInfoSceneController implements Initializable {
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) {
     }
-    
+
 }
