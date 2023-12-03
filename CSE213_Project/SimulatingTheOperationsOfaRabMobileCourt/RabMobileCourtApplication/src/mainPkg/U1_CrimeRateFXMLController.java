@@ -32,7 +32,7 @@ public class U1_CrimeRateFXMLController implements Initializable {
     @FXML
     private TextArea crimeRateTextArea;
     @FXML
-    private ComboBox<?> districtNameComboBox;
+    private ComboBox<String> districtNameComboBox;
     @FXML
     private TextField crimeCountTextField;
 
@@ -41,8 +41,8 @@ public class U1_CrimeRateFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        operationTypeComboBox.getItems().addAll("Social Justice", "Terrorism", "Public Safety");
-        // TODO
+        districtNameComboBox.getItems().addAll("Dhaka", "Khulna", "Barishal", "Chittagong", "Comilla");
+        
     }    
 
     @FXML
