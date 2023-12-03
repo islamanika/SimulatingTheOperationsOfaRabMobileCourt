@@ -105,19 +105,23 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
 
             dos = new DataOutputStream(fos);
 
-            String b = budgetTextField.getText();
-            int budget = Integer.parseInt(b);
+//            String b = budgetTextField.getText();
+//            int budget = Integer.parseInt(b);
+//            String operationtype = operationTypeComboBox.getValue();
+//            String operationPlace = placeComboBox.getValue();
 
-            dos.writeUTF(operationTypeComboBox.getValue());
-            dos.writeUTF(placeComboBox.getValue());
-            dos.writeInt(budget);
+            for (U1_Budget bt : budgetList) {
+                dos.writeInt(bt.getBudget());
+                dos.writeUTF(bt.getOperationtype());
+                dos.writeUTF(bt.getOperationPlace());
+
+            }
+
+            
 
         } catch (IOException e) {
-            Logger.getLogger( U1_BudgetAllocationFXMLController.class.getName()).log(Level.SEVERE, null, e);
-        } 
-        
-
-        
+            Logger.getLogger(U1_BudgetAllocationFXMLController.class.getName()).log(Level.SEVERE, null, e);
+        }
 
     }
 
@@ -134,7 +138,16 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     }
 
     @FXML
-    private void pieChartButtonOnClick(ActionEvent event) {
+    private void pieChartButtonOnClick(ActionEvent event) throws IOException {
+
+        Parent root = null;
+        FXMLLoader someLoader = new FXMLLoader(getClass().getResource("DistrictOfficerdashBoardFXML.fxml"));
+        root = (Parent) someLoader.load();
+        Scene someScene = new Scene(root);
+
+        Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        someStage.setScene(someScene);
+        someStage.show();
     }
 
 }
