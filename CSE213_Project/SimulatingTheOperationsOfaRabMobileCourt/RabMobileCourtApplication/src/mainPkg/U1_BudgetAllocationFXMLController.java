@@ -55,7 +55,7 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private ComboBox<String> placeComboBox;
 
     ObservableList<U1_Budget> budgetList = FXCollections.observableArrayList();
-    
+
     ArrayList<U1_Budget> bList = new ArrayList<>();
     @FXML
     private ComboBox<String> opesearchrationTypeComboBox1;
@@ -72,29 +72,19 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         budgetTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, Integer>("budget"));
 
     }
-    
+
     @FXML
     private void pieChartButtonOnClick(ActionEvent event) throws IOException {
         ObservableList<PieChart.Data> List = FXCollections.observableArrayList();
-        for (U1_Budget bt : bList){
-            if (bt.getOperationtype().equals(opesearchrationTypeComboBox1.getValue())){
-                List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
+        for (U1_Budget bt : bList) {
+            if (bt.getOperationtype().equals(opesearchrationTypeComboBox1.getValue())) {
+                List.add(new PieChart.Data(bt.getOperationPlace(), bt.getBudget()));
             }
-                PieChart budgetChart = new PieChart(List);
-                budgetChart.setTitle("Operation Budget");
-                budgetPieChart.setData(List);
-                
-            }
-            
-            
-            
-    
 
-        
-        
-        
-
-        
+        }
+        PieChart budgetChart = new PieChart(List);
+        budgetChart.setTitle("Budget % in Following places");
+        budgetPieChart.setData(List);
     }
 
     @FXML
@@ -143,15 +133,12 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
 //            int budget = Integer.parseInt(b);
 //            String operationtype = operationTypeComboBox.getValue();
 //            String operationPlace = placeComboBox.getValue();
-
             for (U1_Budget bt : budgetList) {
                 dos.writeInt(bt.getBudget());
                 dos.writeUTF(bt.getOperationtype());
                 dos.writeUTF(bt.getOperationPlace());
 
             }
-
-            
 
         } catch (IOException e) {
             Logger.getLogger(U1_BudgetAllocationFXMLController.class.getName()).log(Level.SEVERE, null, e);
@@ -170,7 +157,5 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         someStage.setScene(someScene);
         someStage.show();
     }
-
-    
 
 }

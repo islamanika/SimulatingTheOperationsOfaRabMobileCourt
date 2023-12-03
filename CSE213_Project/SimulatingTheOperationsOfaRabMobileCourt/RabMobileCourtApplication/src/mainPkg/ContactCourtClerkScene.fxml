@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #4a148c;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #4a148c;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="mainPkg.ContactCourtClerkSceneController">
    <children>
       <Label layoutX="259.0" layoutY="32.0" text="Contact Court Clerk" textFill="#ff80ab">
          <font>
