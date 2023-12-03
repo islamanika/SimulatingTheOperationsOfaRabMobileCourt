@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -61,6 +62,30 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
 
     @FXML
     private void allocateBudgetOnClick(ActionEvent event) {
+        
+        try {
+            String b = budgetTextField.getText();
+            int budget = Integer.parseInt(b);
+            String operationtype = operationTypeComboBox.getValue();
+            String operationPlace = placeComboBox.getValue();
+
+            
+
+            U1_Budget bdgt = new U1_Budget(budget, operationtype, operationPlace);
+            budgetList.add(bdgt);
+            budgetAllocationTableView.setItems(budgetList);
+
+            
+
+        }  catch(Exception err){
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error Alert");
+            error.setHeaderText("Fatal Error!");
+            error.setContentText("Please fill all the fields proprly!");
+            error.showAndWait();
+        }
+        
+        
     }
 
     @FXML
