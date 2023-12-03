@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,6 +54,10 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private ComboBox<String> placeComboBox;
 
     ObservableList<U1_Budget> budgetList = FXCollections.observableArrayList();
+    
+    ArrayList<U1_Budget> bList = new ArrayList<>();
+    @FXML
+    private ComboBox<?> opesearchrationTypeComboBox1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,6 +67,12 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         placeTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationPlace"));
         budgetTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, Integer>("budget"));
 
+    }
+    
+    @FXML
+    private void pieChartButtonOnClick(ActionEvent event) throws IOException {
+
+        
     }
 
     @FXML
@@ -75,6 +86,7 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
 
             U1_Budget bdgt = new U1_Budget(budget, operationtype, operationPlace);
             budgetList.add(bdgt);
+            bList.add(bdgt);
             budgetAllocationTableView.setItems(budgetList);
 
         } catch (Exception err) {
@@ -137,17 +149,6 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         someStage.show();
     }
 
-    @FXML
-    private void pieChartButtonOnClick(ActionEvent event) throws IOException {
-
-        Parent root = null;
-        FXMLLoader someLoader = new FXMLLoader(getClass().getResource("U1_OperationBudgetFXML.fxml"));
-        root = (Parent) someLoader.load();
-        Scene someScene = new Scene(root);
-
-        Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        someStage.setScene(someScene);
-        someStage.show();
-    }
+    
 
 }
