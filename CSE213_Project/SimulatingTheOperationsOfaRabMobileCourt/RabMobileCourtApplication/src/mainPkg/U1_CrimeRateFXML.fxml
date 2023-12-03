@@ -2,25 +2,40 @@
 
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d7ccc8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPkg.U1_CrimeRateFXMLController">
    <children>
-      <Button layoutX="470.0" layoutY="356.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-color: #8d6e63;" text="Return Home">
+      <Button layoutX="634.0" layoutY="519.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-color: #8d6e63;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="23.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadOperationExecutedFileButtonOnclick" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: #8d6e63;" text="Load Operation Executed File">
+      <Button layoutX="52.0" layoutY="519.0" mnemonicParsing="false" onAction="#loadOperationExecutedFileButtonOnclick" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: #8d6e63;" text="Load Operation Executed File">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <PieChart fx:id="pieChart" layoutX="284.0" layoutY="72.0" prefHeight="257.0" prefWidth="295.0" style="-fx-border-color: black;" />
-      <TextArea fx:id="operationExecutedFileTextArea" layoutX="23.0" layoutY="73.0" prefHeight="257.0" prefWidth="240.0" style="-fx-background-color: #ffebee;" />
-      <Button layoutX="374.0" layoutY="39.0" mnemonicParsing="false" onAction="#pieChartViewButtonOnClick" style="-fx-background-color: #8d6e63;" text="Pie Chart View">
+      <PieChart fx:id="pieChart" layoutX="448.0" layoutY="218.0" prefHeight="257.0" prefWidth="295.0" style="-fx-border-color: black;" />
+      <Button layoutX="373.0" layoutY="519.0" mnemonicParsing="false" onAction="#pieChartViewButtonOnClick" style="-fx-background-color: #8d6e63;" text="Pie Chart View">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
+      <ComboBox layoutX="27.0" layoutY="156.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField layoutX="27.0" layoutY="228.0" />
+      <TextArea layoutX="27.0" layoutY="283.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="93.0" layoutY="126.0" prefHeight="20.0" prefWidth="69.0" text="District">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="198.0" prefHeight="20.0" prefWidth="109.0" text="Crime Number">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

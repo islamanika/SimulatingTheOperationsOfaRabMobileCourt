@@ -27,8 +27,6 @@ public class U1_CrimeRateFXMLController implements Initializable {
 
     @FXML
     private PieChart pieChart;
-    @FXML
-    private TextArea operationExecutedFileTextArea;
 
     /**
      * Initializes the controller class.
