@@ -1,11 +1,12 @@
 package mainPkg;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -52,6 +55,9 @@ public class MagisIssueSerWarSceneController implements Initializable {
     @FXML
     private TextArea viewDraftTextArea;
 
+    // Declare the draftWarrant variable at the class level
+    private Issued_Warrant draftWarrant;
+
     /**
      * Initializes the controller class.
      */
@@ -67,7 +73,7 @@ public class MagisIssueSerWarSceneController implements Initializable {
 
     @FXML
     private void loadWarReqButtonOnClick(ActionEvent event) {
-        
+
         ObjectInputStream ois = null;
         try {
             Search_Warrant s;
@@ -99,10 +105,84 @@ public class MagisIssueSerWarSceneController implements Initializable {
 
     @FXML
     private void viewDraftButtonOnClick(ActionEvent event) {
+        // Validate that usersNameTextField and datePicker are not empty
+        if (usersNameTextField.getText().isEmpty() || datePicker.getValue() == null) {
+            showValidationErrorAlert("Please enter a User Name and Date as Signeture.");
+            return; // Stop execution if validation fails
+        }
+
+        // Initialize the draftWarrant variable
+        draftWarrant = new Issued_Warrant(
+                Integer.parseInt(warIdTextField.getText()),
+                Integer.parseInt(rabOffiIdTextField.getText()),
+                instiNameTextField.getText(),
+                Integer.parseInt(numOfSubTextField.getText()),
+                usersNameTextField.getText(),
+                datePicker.getValue());
+
+        viewDraftTextArea.setText(draftWarrant.toString());
     }
 
     @FXML
     private void issueWarButtonOnClick(ActionEvent event) {
+
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        a.setTitle("Confirmation Alert");
+        a.setContentText("Please select Ok to confirm! Otherwise Cancel");
+
+        Optional<ButtonType> result = a.showAndWait();
+        if (result.get() == ButtonType.OK) {
+
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                // Check if draftWarrant is not null before using it
+                if (draftWarrant != null) {
+                    f = new File("IssuedWarrantObjects.bin");
+                    if (f.exists()) {
+                        fos = new FileOutputStream(f, true);
+                        oos = new AppendableObjectOutputStream(fos);
+                    } else {
+                        fos = new FileOutputStream(f);
+                        oos = new ObjectOutputStream(fos);
+                    }
+                    oos.writeObject(draftWarrant);
+                } else {
+                    // Handle the case where draftWarrant is null (optional)
+                    showInfoAlertAfterConfirmation("Draft Warrant is null. Please generate it before issuing.");
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(MagisIssueSerWarSceneController.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(MagisIssueSerWarSceneController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } else {
+            //show appropriate cancellation message
+            showInfoAlertAfterConfirmation("The Data was not saved!");
+        }
     }
 
+    private void showInfoAlertAfterConfirmation(String str) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("Information Alert");
+        a.setContentText(str);
+        a.showAndWait();
+    }
+
+    private void showValidationErrorAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Validation Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }
