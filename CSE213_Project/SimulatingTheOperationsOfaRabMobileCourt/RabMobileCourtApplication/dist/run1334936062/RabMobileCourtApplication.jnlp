@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< Updated upstream
-    <jar href="RabMobileCourtApplication.jar" size="1240142" download="eager" />
-=======
-    <jar href="RabMobileCourtApplication.jar" size="1241918" download="eager" />
->>>>>>> Stashed changes
+    <jar href="RabMobileCourtApplication.jar" size="1241919" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="mainPkg.MainApplication"  name="RabMobileCourtApplication" />
   <update check="always"/>
