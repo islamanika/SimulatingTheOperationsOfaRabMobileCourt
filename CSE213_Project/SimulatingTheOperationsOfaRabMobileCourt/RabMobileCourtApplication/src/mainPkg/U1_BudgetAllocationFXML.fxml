@@ -23,15 +23,15 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <TableView layoutX="57.0" layoutY="233.0" prefHeight="200.0" prefWidth="693.0">
+      <TableView fx:id="budgetAllocationTableView" layoutX="57.0" layoutY="233.0" prefHeight="200.0" prefWidth="693.0">
         <columns>
-          <TableColumn prefWidth="207.0" text="Operation Type" />
-          <TableColumn prefWidth="234.0" text="Operation Place" />
-            <TableColumn prefWidth="251.0" text="Budget" />
+          <TableColumn fx:id="operationTableCol" prefWidth="207.0" text="Operation Type" />
+          <TableColumn fx:id="placeTableCol" prefWidth="234.0" text="Operation Place" />
+            <TableColumn fx:id="budgetTableCol" prefWidth="251.0" text="Budget" />
         </columns>
       </TableView>
-      <ComboBox layoutX="143.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" />
-      <ComboBox layoutX="336.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" />
+      <ComboBox layoutX="143.0" layoutY="179.0" onAction="#operationTypeComboBox" prefHeight="25.0" prefWidth="109.0" />
+      <ComboBox layoutX="336.0" layoutY="179.0" onAction="#placeComboBox" prefHeight="25.0" prefWidth="109.0" />
       <Label layoutX="163.0" layoutY="149.0" prefHeight="20.0" prefWidth="69.0" text="Operation">
          <font>
             <Font name="System Bold Italic" size="14.0" />
@@ -42,7 +42,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="529.0" layoutY="179.0" prefHeight="25.0" prefWidth="130.0" />
+      <TextField fx:id="budgetTextField" layoutX="529.0" layoutY="179.0" prefHeight="25.0" prefWidth="130.0" />
       <Label layoutX="571.0" layoutY="149.0" text="Budget">
          <font>
             <Font name="System Bold Italic" size="14.0" />
