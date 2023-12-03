@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -63,18 +64,23 @@ public class U7_Scheedule_meeting_Scene1Controller implements Initializable {
     private void saveButtonOnClick(ActionEvent event) {
         String meetingId=meetingIdTextField.getText();
         if(meetingId.equals("")){
-            System.out.println("Please Select Meeting Id");
+            showAlert("", "Please Select Meeting Id.");
+            return;
+        }else if (isInteger(meetingId)) {
+            System.out.println(meetingId);
+        } else {
+            showAlert("Invalid meeting Id", "Meeting Id must be an integer.");
             return;
         }
         
         LocalDate meetingDate=meetingDatePicker.getValue();
         if(meetingDate==null){
-            System.out.println("Please Select Meeting Date");
+            showAlert("", "Please Select Meeting Date");
             return;
         }
         String mTime=meetingTimeTextFiled.getText();
         if(mTime.equals("")){
-            System.out.println("Please Select Meeting Time");
+            showAlert("", "Please Enter Meeting Date");
             return;
         }
         
@@ -114,6 +120,24 @@ public class U7_Scheedule_meeting_Scene1Controller implements Initializable {
         Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));
 
+    }
+    //Method for show alert
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+    
+    //Method for check valid Integer
+    private boolean isInteger(String input) {
+        try {
+            Integer.parseInt(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }
 
