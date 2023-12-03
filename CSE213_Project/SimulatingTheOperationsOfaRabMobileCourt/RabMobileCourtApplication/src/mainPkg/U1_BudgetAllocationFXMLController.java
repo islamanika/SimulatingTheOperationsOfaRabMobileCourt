@@ -133,4 +133,8 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         someStage.show();
     }
 
+    @FXML
+    private void pieChartButtonOnClick(ActionEvent event) {
+    }
+
 }
