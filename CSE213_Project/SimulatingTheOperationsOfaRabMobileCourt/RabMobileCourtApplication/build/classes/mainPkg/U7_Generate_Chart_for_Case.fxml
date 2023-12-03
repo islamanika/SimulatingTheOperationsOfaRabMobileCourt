@@ -23,8 +23,8 @@
       <AnchorPane layoutX="210.0" layoutY="24.0" prefHeight="101.0" prefWidth="172.0" style="-fx-border-color: black;">
          <children>
             <Button layoutX="4.0" layoutY="54.0" mnemonicParsing="false" onAction="#addChartDataOnClick" text="Add Data" />
-            <TextField fx:id="CetegoryTextField" layoutX="4.0" layoutY="2.0" prefHeight="25.0" prefWidth="157.0" />
-            <TextField fx:id="valueTextField" layoutX="4.0" layoutY="29.0" prefHeight="25.0" prefWidth="157.0" />
+            <TextField fx:id="CetegoryTextField" layoutX="4.0" layoutY="2.0" prefHeight="25.0" prefWidth="157.0" promptText="Enter Cetegory" />
+            <TextField fx:id="valueTextField" layoutX="4.0" layoutY="29.0" prefHeight="25.0" prefWidth="157.0" promptText="Enter Value" />
             <Button layoutX="82.0" layoutY="54.0" mnemonicParsing="false" onAction="#showChartOnClick" text="Show Chart" />
          </children>
       </AnchorPane>

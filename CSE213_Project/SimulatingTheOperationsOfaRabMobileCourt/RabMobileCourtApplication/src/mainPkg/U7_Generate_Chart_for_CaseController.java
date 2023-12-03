@@ -90,6 +90,7 @@ public class U7_Generate_Chart_for_CaseController implements Initializable {
             System.out.println("Value of" +cetegory+" : " + integerValue );
         } else {
             showAlert("Invalid Input", "Value must be a Number.");
+            return;
         }
         
         Number value=Integer.parseInt(valueStr);
@@ -97,7 +98,7 @@ public class U7_Generate_Chart_for_CaseController implements Initializable {
         
         
         try{
-            File file=new File("User7_All_File//Survey_Chart_Data_File//"+month+year+".txt");
+            File file=new File("User7_All_File//chart_data_of_case//"+month+year+".txt");
             if(!file.exists())file.createNewFile();
             FileWriter fileWriter=new FileWriter(file,true);
             fileWriter.write(cetegory+"#"+value+"\n");
@@ -137,7 +138,7 @@ public class U7_Generate_Chart_for_CaseController implements Initializable {
             return;
         }
         try{
-            File file=new File("User7_All_File//Survey_Chart_Data_File//"+month+year+".txt");
+            File file=new File("User7_All_File//chart_data_of_case//"+month+year+".txt");
             if(!file.exists()){
                 showAlert("Report chart doesn't exists", "Report chart doesn't exists");
                 return;
