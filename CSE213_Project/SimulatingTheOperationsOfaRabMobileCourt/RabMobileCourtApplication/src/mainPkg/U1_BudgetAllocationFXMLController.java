@@ -16,7 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -30,13 +30,13 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     @FXML
     private TextField budgetTextField;
     @FXML
-    private TableView<?> budgetAllocationTableView;
+    private TableView<U1_Budget> budgetAllocationTableView;
     @FXML
-    private TableColumn<?, ?> operationTableCol;
+    private TableColumn<U1_Budget, String> operationTableCol;
     @FXML
-    private TableColumn<?, ?> placeTableCol;
+    private TableColumn<U1_Budget, String> placeTableCol;
     @FXML
-    private TableColumn<?, ?> budgetTableCol;
+    private TableColumn<U1_Budget, Integer> budgetTableCol;
 
     /**
      * Initializes the controller class.
