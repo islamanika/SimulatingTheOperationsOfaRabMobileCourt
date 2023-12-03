@@ -9,27 +9,25 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class ContactCourtClerkSceneController implements Initializable {
+public class CreateCaseFileSceneController implements Initializable {
 
     @FXML
-    private TextField userIdTextField;
+    private TextField caseIdTextField;
     @FXML
-    private TextField messageIdTextField;
+    private TextField caseTitleTextField;
     @FXML
-    private RadioButton regularRB;
+    private TextField offiBadgeNumTextField;
     @FXML
-    private RadioButton urgentRB;
+    private TextField eviListTextField;
     @FXML
-    private TextArea msgToCourtClerkTextArea;
+    private TextField eyeWitInfoTextField;
     @FXML
-    private TextField signatureTextField;
+    private TextField defInfoTextField;
     @FXML
-    private DatePicker dateDatePicker;
+    private TextArea viewDraftTextArea;
 
     /**
      * Initializes the controller class.
@@ -40,11 +38,11 @@ public class ContactCourtClerkSceneController implements Initializable {
     }
 
     @FXML
-    private void sendMsgButtonOnClick(ActionEvent event) {
+    private void viewDraftButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewMsgButtonOnClick(ActionEvent event) {
+    private void saveCaseFileButtonOnClick(ActionEvent event) {
     }
 
     @FXML

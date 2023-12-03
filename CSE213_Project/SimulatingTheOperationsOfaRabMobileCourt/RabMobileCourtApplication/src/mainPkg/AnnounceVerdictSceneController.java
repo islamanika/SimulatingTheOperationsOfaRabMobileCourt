@@ -15,11 +15,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author tabri
- */
 public class AnnounceVerdictSceneController implements Initializable {
 
     @FXML
@@ -49,7 +44,7 @@ public class AnnounceVerdictSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void viewButtonOnClick(ActionEvent event) {
@@ -62,5 +57,5 @@ public class AnnounceVerdictSceneController implements Initializable {
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) {
     }
-    
+
 }
