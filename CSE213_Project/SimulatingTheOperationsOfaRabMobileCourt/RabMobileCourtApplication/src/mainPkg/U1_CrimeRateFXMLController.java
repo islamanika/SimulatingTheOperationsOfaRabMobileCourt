@@ -15,7 +15,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -29,12 +31,17 @@ public class U1_CrimeRateFXMLController implements Initializable {
     private PieChart pieChart;
     @FXML
     private TextArea crimeRateTextArea;
+    @FXML
+    private ComboBox<?> districtNameComboBox;
+    @FXML
+    private TextField crimeCountTextField;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        operationTypeComboBox.getItems().addAll("Social Justice", "Terrorism", "Public Safety");
         // TODO
     }    
 

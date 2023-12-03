@@ -24,15 +24,15 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <ComboBox layoutX="27.0" layoutY="156.0" prefHeight="31.0" prefWidth="187.0" />
-      <TextField layoutX="27.0" layoutY="228.0" />
+      <ComboBox fx:id="districtNameComboBox" layoutX="27.0" layoutY="156.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="crimeCountTextField" layoutX="27.0" layoutY="228.0" />
       <TextArea fx:id="crimeRateTextArea" layoutX="27.0" layoutY="283.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="93.0" layoutY="126.0" prefHeight="20.0" prefWidth="69.0" text="District">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="73.0" layoutY="198.0" prefHeight="20.0" prefWidth="109.0" text="Crime Number">
+      <Label layoutX="73.0" layoutY="198.0" prefHeight="20.0" prefWidth="109.0" text="Crime count">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
