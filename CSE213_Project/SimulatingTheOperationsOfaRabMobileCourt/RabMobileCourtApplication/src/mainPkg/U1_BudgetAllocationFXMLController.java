@@ -81,20 +81,20 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
             }
                 PieChart budgetChart = new PieChart(List);
-                budgetChart.setTitle("Operation Budget");
+                budgetChart.setTitle("Budget % in Following places");
                 budgetPieChart.setData(List);
                 
             }
-            
-            
-            
-    
-
-        
         
         
 
-        
+
+
+
+   
+
+
+            
     }
 
     @FXML
