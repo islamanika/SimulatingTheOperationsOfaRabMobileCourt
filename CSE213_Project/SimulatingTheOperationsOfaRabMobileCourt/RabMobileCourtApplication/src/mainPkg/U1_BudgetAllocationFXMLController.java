@@ -59,6 +59,8 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     ArrayList<U1_Budget> bList = new ArrayList<>();
     @FXML
     private ComboBox<String> opesearchrationTypeComboBox1;
+    @FXML
+    private PieChart budgetPieChart;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -80,6 +82,9 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
+                PieChart budgetChart = new PieChart(List);
+                budgetChart.setTitle("Operation Budget");
+                
                 
             }
         }
