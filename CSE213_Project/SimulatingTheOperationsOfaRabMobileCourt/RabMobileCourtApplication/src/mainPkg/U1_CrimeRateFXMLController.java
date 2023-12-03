@@ -6,6 +6,7 @@ package mainPkg;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,14 +37,13 @@ public class U1_CrimeRateFXMLController implements Initializable {
     @FXML
     private TextField crimeCountTextField;
 
-    /**
-     * Initializes the controller class.
-     */
+    ArrayList<U1_CrimeRate> crimeRate = new ArrayList<>();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         districtNameComboBox.getItems().addAll("Dhaka", "Khulna", "Barishal", "Chittagong", "Comilla");
-        
-    }    
+
+    }
 
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
@@ -51,14 +51,11 @@ public class U1_CrimeRateFXMLController implements Initializable {
         FXMLLoader someLoader = new FXMLLoader(getClass().getResource("DistrictOfficerdashBoardFXML.fxml"));
         root = (Parent) someLoader.load();
         Scene someScene = new Scene(root);
-        
 
-        
-        Stage someStage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         someStage.setScene(someScene);
         someStage.show();
     }
-
 
     @FXML
     private void pieChartViewButtonOnClick(ActionEvent event) {
@@ -66,6 +63,19 @@ public class U1_CrimeRateFXMLController implements Initializable {
 
     @FXML
     private void loadButtonOnclick(ActionEvent event) {
+
+        String c = crimeRateTextArea.getText();
+        int crimeCount = Integer.parseInt(c);
+        String districtName = districtNameComboBox.getValue();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('{');
+        sb.append("crimeCount=").append(crimeCount);
+        sb.append(", districtName=").append(districtName);
+        sb.append('}');
+
+        crimeCountTextField.setText(sb.toString() + "\n");
+
     }
-    
+
 }
