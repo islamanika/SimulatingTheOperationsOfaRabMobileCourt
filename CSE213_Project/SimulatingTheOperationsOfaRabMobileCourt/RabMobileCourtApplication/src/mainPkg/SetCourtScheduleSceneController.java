@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package mainPkg;
 
 import java.io.IOException;
@@ -10,39 +14,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-public class MagisIssueSerWarSceneController implements Initializable {
+/**
+ * FXML Controller class
+ *
+ * @author tabri
+ */
+public class SetCourtScheduleSceneController implements Initializable {
 
-    @FXML
-    private TableView<?> warReqTable;
-    @FXML
-    private TableColumn<?, ?> warIdCol;
-    @FXML
-    private TableColumn<?, ?> nameInstCol;
-    @FXML
-    private TableColumn<?, ?> typeInstCol;
-    @FXML
-    private TableColumn<?, ?> propDateOfSerCol;
-    @FXML
-    private TableColumn<?, ?> badgeNumCol;
-    @FXML
-    private TableColumn<?, ?> serReasCol;
-
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-
-    @FXML
-    private void loadWarReqButtonOnClick(ActionEvent event) {
-    }
+    }    
 
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
@@ -51,5 +38,5 @@ public class MagisIssueSerWarSceneController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));
     }
-
+    
 }

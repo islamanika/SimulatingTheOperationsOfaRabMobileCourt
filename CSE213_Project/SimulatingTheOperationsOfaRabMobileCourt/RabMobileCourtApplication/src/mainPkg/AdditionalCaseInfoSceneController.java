@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package mainPkg;
 
 import java.io.IOException;
@@ -10,31 +14,28 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class VerdictDetailsInfoSceneController implements Initializable {
+public class AdditionalCaseInfoSceneController implements Initializable {
 
+    @FXML
+    private TextArea viewCaseInfoReqTextArea;
+    @FXML
+    private TextField addiCaseInfoIdTField;
     @FXML
     private TextField caseIdTextField;
     @FXML
-    private TextField verIdTextField;
+    private TextField defenIdTextField;
     @FXML
-    private ComboBox<?> verTypeCB;
+    private RadioButton yesRadioB;
     @FXML
-    private TableView<?> tableView;
+    private RadioButton noRadioB;
     @FXML
-    private TableColumn<?, ?> caseIdTableCol;
-    @FXML
-    private TableColumn<?, ?> verIDTableCol;
-    @FXML
-    private TableColumn<?, ?> verTypeTableCol;
-    @FXML
-    private PieChart pieChart;
+    private TextArea pastHistTextArea;
 
     /**
      * Initializes the controller class.
@@ -45,15 +46,19 @@ public class VerdictDetailsInfoSceneController implements Initializable {
     }
 
     @FXML
-    private void saveVerDetailsButtonOnClick(ActionEvent event) {
+    private void viewAdditionalInfoButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewInTableButtonOnClick(ActionEvent event) {
+    private void viewDraftButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewInPieChartButtonOnClick(ActionEvent event) {
+    private void viewDraftButtonOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void saveInfoButtonOnClick(ActionEvent event) {
     }
 
     @FXML
