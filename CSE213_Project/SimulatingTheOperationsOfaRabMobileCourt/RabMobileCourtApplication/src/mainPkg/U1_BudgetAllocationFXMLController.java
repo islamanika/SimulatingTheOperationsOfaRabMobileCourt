@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -37,6 +38,10 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private TableColumn<U1_Budget, String> placeTableCol;
     @FXML
     private TableColumn<U1_Budget, Integer> budgetTableCol;
+    @FXML
+    private ComboBox<String> operationTypeComboBox;
+    @FXML
+    private ComboBox<String> placeComboBox;
 
     /**
      * Initializes the controller class.
@@ -68,12 +73,5 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         someStage.show();
     }
 
-    @FXML
-    private void operationTypeComboBox(ActionEvent event) {
-    }
-
-    @FXML
-    private void placeComboBox(ActionEvent event) {
-    }
     
 }
