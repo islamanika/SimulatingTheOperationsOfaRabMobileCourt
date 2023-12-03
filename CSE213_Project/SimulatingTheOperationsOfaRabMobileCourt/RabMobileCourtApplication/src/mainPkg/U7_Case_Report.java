@@ -51,7 +51,7 @@ public class U7_Case_Report {
     @Override
     public String toString() {
         return "caseReportId : " + caseReportId + ", reportDate : " + reportDate + 
-                ",\n Case Report : \n" + description ;
+                ",\n Case Report Details : \n" + description ;
     }
 
     

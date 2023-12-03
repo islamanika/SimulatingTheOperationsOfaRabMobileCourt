@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -61,55 +62,62 @@ public class U7_Generate_Case_ReportController implements Initializable {
 
     @FXML
     private void saveReportOnClick(ActionEvent event) {
-        
-        String reportId=caseReportIdTextField.getText();
-        if(reportId.equals("")){
-            notificationLabel.setText("Please Select Report id");
-            return;
-        }
-        
-        LocalDate reportDate=caseReportDatePicker.getValue();
-        if(reportDate==null){
-            notificationLabel.setText("Please Select Report Date");
-            return;
-        }
-        
-        String Description=reportDetailsTextArea.getText();
-        if(Description.equals("")){
-            notificationLabel.setText("Please Select Report Details");
-            return;
-        }
-        
         String month=monthComboBox.getValue();
         if(month==null){
-            notificationLabel.setText("Please Select Report Month");
+            showAlert("", "Please Select case Report Month");
             return;
         }
         
         String year=yearComboBox.getValue();
         if(year==null){
-            notificationLabel.setText("Please Select Report Year");
+            showAlert("", "Please Select case Report Year");
             return;
         }
         
+        String reportId=caseReportIdTextField.getText();
+        if(reportId.equals("")){
+            showAlert("", "Please Select Report id");
+            return;
+        }else if (isInteger(reportId)) {
+            int parsedSurveyId = Integer.parseInt(reportId);
+            System.out.println("Survey Id (Integer): " + parsedSurveyId);
+        } else {
+            showAlert("Invalid Survey Id", "Survey Id must be an integer.");
+            return;
+        }
+        
+        LocalDate reportDate=caseReportDatePicker.getValue();
+        if(reportDate==null){
+            showAlert("", "Please Select Report Date");
+            return;
+        }
+        
+        String Description=reportDetailsTextArea.getText();
+        if(Description.equals("")){
+            showAlert("", "Please Select Report Details");
+            return;
+        }
+        
+        
+        
         try{
-            String fileName="User7_All_File//Case_Report//"+month+year+".txt";
-            File file=new File(fileName);
+            
+            File file=new File("User7_All_File//Case_Report//"+month+year+".txt");
             if(!file.exists())file.createNewFile();
             
-            boolean existCaseReport=false;
+            boolean existCaseReportId=false;
             Scanner sc=new Scanner(file);
             while(sc.hasNextLine()){
                 String [] part=sc.nextLine().split("#");
                 if(reportId.equals(part[0])){
-                    existCaseReport=true;
+                    existCaseReportId=true;
                     break;
                 }
             
             }
             
-            if(existCaseReport){
-                notificationLabel.setText("Report Id Already Exist!");
+            if(existCaseReportId){
+                showAlert("", "Report Id Already Exist!");
                 return;
             }
             else{
@@ -137,6 +145,38 @@ public class U7_Generate_Case_ReportController implements Initializable {
 
     @FXML
     private void viewCaseReportOnClick(ActionEvent event) {
+        String month=monthComboBox.getValue();
+        if(month==null){
+            showAlert("", "Please Select case Report Month");
+            return;
+        }
+        
+        String year=yearComboBox.getValue();
+        if(year==null){
+            showAlert("", "Please Select case Report Year");
+            return;
+        }
+        
+        try{
+            File file=new File("User7_All_File//Case_Report//"+month+year+".txt");
+            if(!file.exists()){
+                showAlert("Case Report Doesn't exist!", "Case Report Doesn't exist!");
+                return;
+                
+            }
+            Scanner sc=new Scanner(file);
+            String caseReportStr="Case Report of" +month+" "+year +"\n";
+            while(sc.hasNextLine()){
+                String [] part=sc.nextLine().split("#");
+                U7_Case_Report caseReport=new U7_Case_Report(part[0],LocalDate.parse(part[1]),part[2]);
+                caseReportStr +=caseReport.toString()+"\n\n";
+            }
+            showSaveReportTextArea.setText(caseReportStr);
+            
+            
+        }catch(Exception e){
+            
+        }
     }
 
     @FXML
@@ -145,6 +185,24 @@ public class U7_Generate_Case_ReportController implements Initializable {
         Parent secondRoot=loader.load();
         Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));
+    }
+    //Method for show alert
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+    
+    //method for check valid integer
+    private boolean isInteger(String input) {
+        try {
+            Integer.parseInt(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
     
 }

@@ -159,11 +159,9 @@ public class U7_View_Survey_ReportController implements Initializable {
     //Method to check valid integer 
     private boolean isInteger(String input) {
         try {
-            // Attempt to parse the input as an integer
             Integer.parseInt(input);
             return true;
         } catch (NumberFormatException e) {
-            // Parsing failed, input is not an integer
             return false;
         }
     }
