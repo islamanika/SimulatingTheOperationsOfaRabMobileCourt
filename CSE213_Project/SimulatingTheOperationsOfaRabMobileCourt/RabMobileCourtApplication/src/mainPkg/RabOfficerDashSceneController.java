@@ -76,7 +76,7 @@ public class RabOfficerDashSceneController implements Initializable {
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Log_In_Scene.fxml"));
         Parent secondRoot = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));
@@ -85,7 +85,7 @@ public class RabOfficerDashSceneController implements Initializable {
 
     @FXML
     private void goToAddiCaseInfoSceneOnClick(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AdditionalCaseInfoScene.fxml"));
         Parent secondRoot = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));

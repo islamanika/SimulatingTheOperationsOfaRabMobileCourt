@@ -4,10 +4,6 @@
  */
 package mainPkg;
 
-/**
- *
- * @author tabri
- */
-public class NewClass1 {
-    
+public class Verdict_Detail {
+
 }

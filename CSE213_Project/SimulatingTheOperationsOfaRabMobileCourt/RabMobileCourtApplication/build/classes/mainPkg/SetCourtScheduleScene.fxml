@@ -12,8 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: violet;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: violet;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPkg.SetCourtScheduleSceneController">
    <children>
       <Label layoutX="265.0" layoutY="47.0" text="Set Court Schedule">
          <font>
@@ -78,7 +77,7 @@
          </font>
       </Button>
       <TextArea layoutX="236.0" layoutY="451.0" prefHeight="160.0" prefWidth="314.0" />
-      <Button layoutX="617.0" layoutY="553.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Return Home">
+      <Button layoutX="617.0" layoutY="553.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
