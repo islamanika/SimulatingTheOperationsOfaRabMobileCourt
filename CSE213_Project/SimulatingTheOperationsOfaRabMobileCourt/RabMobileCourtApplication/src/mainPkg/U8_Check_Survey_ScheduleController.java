@@ -117,7 +117,7 @@ public class U8_Check_Survey_ScheduleController implements Initializable {
         }
         fileWriter.close();
         try{
-            File file1=new File("User8_All_File//survey_previously_Survey_File.txt");
+            File file1=new File("User8_All_File//previously_Survey_Lit_File.txt");
             if(!file1.exists())file1.createNewFile();
             FileWriter fileWriter1=new FileWriter(file1,true);
             fileWriter1.write(selectedSchedule.getSurveyId()+"#"+selectedSchedule.getInstitutionName()+"#"+selectedSchedule.getInstitutionLocation()+"#"+selectedSchedule.getSurveyDate()+"\n");
