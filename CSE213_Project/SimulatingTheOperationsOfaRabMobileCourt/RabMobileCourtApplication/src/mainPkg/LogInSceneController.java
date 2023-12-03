@@ -68,56 +68,56 @@ public class LogInSceneController implements Initializable {
 
             stg.setScene(scene);
             stg.show();
-        } else if ((userId == 1378) && pass_str.equals("123") && userTypeCombo.getValue().equals("Restaurant Manager")) {
+        } else if ((userId == 1378) && pass_str.equals("123") && userTypeCombo.getValue().equals("Operations Administrator")) {
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("LogIn Status");
             a1.setContentText("Click Ok to Continue");
             a1.setHeaderText("Welcome " + userId);
             a1.showAndWait();
 
-            Parent parent = FXMLLoader.load(getClass().getResource("RestaurantManagerDashboard.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("U7_Operations_Administrator_DashBoard.fxml"));
 
             Scene scene = new Scene(parent);
             Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             stg.setScene(scene);
             stg.show();
-        } else if ((userId == 3015) && pass_str.equals("123") && userTypeCombo.getValue().equals("Customer Care Executive")) {
+        } else if ((userId == 3015) && pass_str.equals("123") && userTypeCombo.getValue().equals("Undercover Investigator")) {
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("LogIn Status");
             a1.setContentText("Click Ok to Continue");
             a1.setHeaderText("Welcome " + userId);
             a1.showAndWait();
 
-            Parent parent = FXMLLoader.load(getClass().getResource("CustomerCareExecutiveDashboard.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("U8_Undercover_Investigator_DashBoard.fxml"));
 
             Scene scene = new Scene(parent);
             Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             stg.setScene(scene);
             stg.show();
-        } else if ((userId == 2111) && pass_str.equals("123") && userTypeCombo.getValue().equals("Customer")) {
+        } else if ((userId == 2111) && pass_str.equals("123") && userTypeCombo.getValue().equals("Lawyer")) {
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("LogIn Status");
             a1.setContentText("Click Ok to Continue");
             a1.setHeaderText("Welcome " + userId);
             a1.showAndWait();
 
-            Parent parent = FXMLLoader.load(getClass().getResource("CustomerDashboard.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("U2_LawyerDashBoardFXML.fxml"));
 
             Scene scene = new Scene(parent);
             Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             stg.setScene(scene);
             stg.show();
-        } else if ((userId == 2112) && pass_str.equals("123") && userTypeCombo.getValue().equals("Accountant")) {
+        } else if ((userId == 2112) && pass_str.equals("123") && userTypeCombo.getValue().equals("District Officer")) {
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("LogIn Status");
             a1.setContentText("Click Ok to Continue");
             a1.setHeaderText("Welcome " + userId);
             a1.showAndWait();
 
-            Parent parent = FXMLLoader.load(getClass().getResource("AccountantDashboard.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("DistrictOfficerdashBoardFXML.fxml"));
 
             Scene scene = new Scene(parent);
             Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
