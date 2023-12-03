@@ -54,7 +54,6 @@ public class U1_OperationBudgetFXMLController implements Initializable {
 
                 while (dis.available() > 0) {
 
-                    String SavedZone, SavedBranch;
 
                     int budget;
                     String operationtype, operationPlace;
