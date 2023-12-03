@@ -58,7 +58,7 @@ public class VerdictDetailsInfoSceneController implements Initializable {
 
     @FXML
     private void returnHomeButtonOnClick(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("RabOfficerDashScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MagistrateDashScene.fxml"));
         Parent secondRoot = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));

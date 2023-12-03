@@ -34,7 +34,7 @@
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="615.0" layoutY="197.0" mnemonicParsing="false" onAction="#goToVerBarChartSceneOnClick" prefHeight="56.0" prefWidth="202.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3; -fx-border-color: black;" text="Verdict Bar Chart">
+      <Button layoutX="615.0" layoutY="197.0" mnemonicParsing="false" onAction="#goToVerPieChartSceneOnClick" prefHeight="56.0" prefWidth="202.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3; -fx-border-color: black;" text="Verdict Pie Chart">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font></Button>
