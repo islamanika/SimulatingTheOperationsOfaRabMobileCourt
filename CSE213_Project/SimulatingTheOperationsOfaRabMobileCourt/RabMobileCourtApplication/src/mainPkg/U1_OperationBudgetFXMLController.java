@@ -39,50 +39,7 @@ public class U1_OperationBudgetFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        FileInputStream fis = null;
-        DataInputStream dis = null;
-
-        try {
-
-            File f = new File("Budget.bin");
-            fis = new FileInputStream(f);
-            dis = new DataInputStream(fis);
-
-            if (f.exists()) {
-
-                ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-
-                while (dis.available() > 0) {
-
-
-                    int budget;
-                    String operationtype, operationPlace;
-
-                    budget = dis.readInt();
-                    operationtype = dis.readUTF();
-                    operationPlace = dis.readUTF();
-
-                    if (operationtype.equals("Terrorism")) {
-                        PieChart.Data data = new PieChart.Data(operationPlace, budget);
-
-                        pieChartData.add(data);
-
-                        data.nameProperty().bindBidirectional(new SimpleStringProperty(data.getName() + ": " + data.getPieValue()));
-                    }
-
-                }
-
-                 budgetPieChart.setData(pieChartData);
-
-            } else {
-
-            }
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
-
+        
     }
 
     @FXML
@@ -100,6 +57,10 @@ public class U1_OperationBudgetFXMLController implements Initializable {
 
     @FXML
     private void generateButtonOnClick(ActionEvent event) {
+        
+        
+        
+        
     }
 
 }

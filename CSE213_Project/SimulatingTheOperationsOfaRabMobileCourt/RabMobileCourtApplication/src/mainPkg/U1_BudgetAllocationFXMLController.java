@@ -22,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -57,12 +58,15 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     
     ArrayList<U1_Budget> bList = new ArrayList<>();
     @FXML
-    private ComboBox<?> opesearchrationTypeComboBox1;
+    private ComboBox<String> opesearchrationTypeComboBox1;
+    @FXML
+    private PieChart budgetPieChart;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         operationTypeComboBox.getItems().addAll("Social Justice", "Terrorism", "Public Safety");
         placeComboBox.getItems().addAll("Mirpur", "Bashundhara", "ECB", "Dhanmondi", "Banani");
+        opesearchrationTypeComboBox1.getItems().addAll("Social Justice", "Terrorism", "Public Safety");
         operationTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationtype"));
         placeTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, String>("operationPlace"));
         budgetTableCol.setCellValueFactory(new PropertyValueFactory<U1_Budget, Integer>("budget"));
@@ -71,6 +75,24 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     
     @FXML
     private void pieChartButtonOnClick(ActionEvent event) throws IOException {
+        ObservableList<PieChart.Data> List = FXCollections.observableArrayList();
+        for (U1_Budget bt : bList){
+            if (bt.getOperationtype().equals(opesearchrationTypeComboBox1.getValue())){
+                List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
+            }
+                PieChart budgetChart = new PieChart(List);
+                budgetChart.setTitle("Operation Budget");
+                budgetPieChart.setData(List);
+                
+            }
+            
+            
+            
+    
+
+        
+        
+        
 
         
     }
