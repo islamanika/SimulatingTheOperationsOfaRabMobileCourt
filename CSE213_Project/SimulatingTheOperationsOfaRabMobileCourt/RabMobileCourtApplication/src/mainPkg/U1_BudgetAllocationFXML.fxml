@@ -23,32 +23,27 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <TableView layoutX="38.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView layoutX="16.0" layoutY="233.0" prefHeight="200.0" prefWidth="383.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="118.0" text="Operation Type" />
+          <TableColumn prefWidth="147.0" text="Operation Place" />
+            <TableColumn prefWidth="117.0" text="Budget" />
         </columns>
       </TableView>
       <ComboBox layoutX="17.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" />
       <ComboBox layoutX="151.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" />
-      <Label layoutX="47.0" layoutY="149.0" text="District">
+      <Label layoutX="37.0" layoutY="149.0" prefHeight="20.0" prefWidth="69.0" text="Operation">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="179.0" layoutY="149.0" text="Place">
+      <Label layoutX="189.0" layoutY="149.0" text="Place">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="277.0" layoutY="179.0" prefHeight="25.0" prefWidth="130.0" />
-      <Label layoutX="287.0" layoutY="149.0" text="Operation Name">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="141.0" layoutY="244.0" prefHeight="25.0" prefWidth="130.0" />
-      <Label layoutX="180.0" layoutY="217.0" text="Amount">
+      <TextField layoutX="270.0" layoutY="179.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label layoutX="301.0" layoutY="149.0" text="Budget">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
