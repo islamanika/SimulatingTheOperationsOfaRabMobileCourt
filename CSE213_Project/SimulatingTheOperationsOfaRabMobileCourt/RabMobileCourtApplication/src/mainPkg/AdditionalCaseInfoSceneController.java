@@ -36,6 +36,8 @@ public class AdditionalCaseInfoSceneController implements Initializable {
     private RadioButton noRadioB;
     @FXML
     private TextArea pastHistTextArea;
+    @FXML
+    private TextArea viewDraftTextArea;
 
     /**
      * Initializes the controller class.
@@ -53,9 +55,6 @@ public class AdditionalCaseInfoSceneController implements Initializable {
     private void viewDraftButtonOnClick(ActionEvent event) {
     }
 
-    @FXML
-    private void viewDraftButtonOnClick(MouseEvent event) {
-    }
 
     @FXML
     private void saveInfoButtonOnClick(ActionEvent event) {

@@ -11,8 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #ea80fc;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #ea80fc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="292.0" layoutY="52.0" text="Create Case File">
          <font>
@@ -50,39 +49,39 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="234.0" layoutY="174.0" />
-      <TextField layoutX="234.0" layoutY="219.0" />
-      <TextField layoutX="234.0" layoutY="269.0" />
+      <TextField fx:id="caseIdTextField" layoutX="234.0" layoutY="174.0" />
+      <TextField fx:id="caseTitleTextField" layoutX="234.0" layoutY="219.0" />
+      <TextField fx:id="offiBadgeNumTextField" layoutX="234.0" layoutY="269.0" />
       <Label layoutX="59.0" layoutY="316.0" text="Evidence List:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="234.0" layoutY="314.0" />
+      <TextField fx:id="eviListTextField" layoutX="234.0" layoutY="314.0" />
       <Label layoutX="59.0" layoutY="363.0" text="Eye Witness Information:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="234.0" layoutY="361.0" />
+      <TextField fx:id="eyeWitInfoTextField" layoutX="234.0" layoutY="361.0" />
       <Label layoutX="63.0" layoutY="410.0" text="Defendant Information:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="234.0" layoutY="408.0" />
-      <Button layoutX="473.0" layoutY="160.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #00e676;" text="View Draft">
+      <TextField fx:id="defInfoTextField" layoutX="234.0" layoutY="408.0" />
+      <Button layoutX="473.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewDraftButtonOnClick" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #00e676;" text="View Draft">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TextArea layoutX="473.0" layoutY="208.0" prefHeight="226.0" prefWidth="326.0" />
-      <Button layoutX="143.0" layoutY="518.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #00e676;" text="Save Case File">
+      <TextArea fx:id="viewDraftTextArea" layoutX="473.0" layoutY="208.0" prefHeight="226.0" prefWidth="326.0" />
+      <Button layoutX="143.0" layoutY="518.0" mnemonicParsing="false" onAction="#saveCaseFileButtonOnClick" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #00e676;" text="Save Case File">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="643.0" layoutY="518.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #00e676;" text="Return Home">
+      <Button layoutX="643.0" layoutY="518.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3; -fx-border-color: #00e676;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
