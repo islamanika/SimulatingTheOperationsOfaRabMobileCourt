@@ -75,7 +75,7 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
     private void pieChartButtonOnClick(ActionEvent event) throws IOException {
         ObservableList<PieChart.Data> List = FXCollections.observableArrayList();
         for (U1_Budget bt : bList){
-            if (bt.getOperationtype() == opesearchrationTypeComboBox1.getValue()){
+            if (bt.getOperationtype().equals(opesearchrationTypeComboBox1.getValue())){
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
