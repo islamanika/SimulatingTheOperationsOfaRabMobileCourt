@@ -79,15 +79,18 @@ public class U1_BudgetAllocationFXMLController implements Initializable {
         for (U1_Budget bt : bList){
             if (bt.getOperationtype().equals(opesearchrationTypeComboBox1.getValue())){
                 List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
-                List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
-                List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
-                List.add(new PieChart.Data(bt.getOperationPlace() , bt.getBudget()));
+            }
                 PieChart budgetChart = new PieChart(List);
                 budgetChart.setTitle("Operation Budget");
-                budgetPieChart.setData((ObservableList<PieChart.Data>) budgetChart);
+                budgetPieChart.setData(List);
                 
             }
-        }
+            
+            
+            
+    
+
+        
         
         
 
