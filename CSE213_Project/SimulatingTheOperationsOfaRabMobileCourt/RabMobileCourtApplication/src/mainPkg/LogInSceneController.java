@@ -68,7 +68,7 @@ public class LogInSceneController implements Initializable {
 
             stg.setScene(scene);
             stg.show();
-        } else if ((userId == 1378) && pass_str.equals("123") && userTypeCombo.getValue().equals("Operations Administrator")) {
+        } else if ((userId == 751807) && pass_str.equals("123") && userTypeCombo.getValue().equals("Operations Administrator")) {
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("LogIn Status");
             a1.setContentText("Click Ok to Continue");
@@ -82,7 +82,7 @@ public class LogInSceneController implements Initializable {
 
             stg.setScene(scene);
             stg.show();
-        } else if ((userId == 3015) && pass_str.equals("123") && userTypeCombo.getValue().equals("Undercover Investigator")) {
+        } else if ((userId == 2221558) && pass_str.equals("123") && userTypeCombo.getValue().equals("Undercover Investigator")) {
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("LogIn Status");
             a1.setContentText("Click Ok to Continue");
