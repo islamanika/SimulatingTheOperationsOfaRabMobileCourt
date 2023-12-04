@@ -21,7 +21,7 @@
             </VBox>
          </children>
       </VBox>
-      <VBox layoutX="165.0" layoutY="48.0" prefHeight="346.0" prefWidth="429.0" style="-fx-border-color: black;" />
+      <VBox layoutX="165.0" layoutY="48.0" prefHeight="314.0" prefWidth="429.0" style="-fx-border-color: black;" />
       <VBox layoutX="8.0" layoutY="48.0" prefHeight="346.0" prefWidth="151.0" style="-fx-background-color: #4752ed;">
          <children>
             <Button mnemonicParsing="false" onAction="#makeScheeduleOnAction" prefHeight="44.0" prefWidth="151.0" style="-fx-background-color: #878ef5; -fx-border-color: #f0f2f7;" text="Make Schedule" />
@@ -34,5 +34,6 @@
             <Button layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#makeSurveyChartOnAction" prefHeight="41.0" prefWidth="152.0" style="-fx-border-color: #f0f2f7; -fx-background-color: #878ef5;" text="Make Survey Chart" />
          </children>
       </VBox>
+      <Button layoutX="441.0" layoutY="362.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #c3c9e0;" text="Log Out" />
    </children>
 </AnchorPane>

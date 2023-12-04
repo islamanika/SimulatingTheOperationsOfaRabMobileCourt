@@ -94,5 +94,13 @@ public class U8_Undercover_Investigator_DashBoardController implements Initializ
         Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(secondRoot));
     }
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("newLogInScene.fxml"));
+        Parent secondRoot=loader.load();
+        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(secondRoot));
+    }
     
 }
