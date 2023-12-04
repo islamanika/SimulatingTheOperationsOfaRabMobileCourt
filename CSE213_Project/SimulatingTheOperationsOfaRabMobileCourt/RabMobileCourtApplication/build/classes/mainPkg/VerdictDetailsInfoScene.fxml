@@ -14,8 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: violet;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="mainPkg.VerdictDetailsInfoSceneController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: violet;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPkg.VerdictDetailsInfoSceneController">
    <children>
       <Label layoutX="269.0" layoutY="35.0" text="Verdict Details Info">
          <font>
@@ -28,12 +27,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.03118908405303955" green="0.42105263471603394" blue="0.08317089080810547" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color red="0.8759010434150696" green="1.0" blue="0.23000000417232513" />
                      </color>
                   </Stop>
                </stops>
@@ -45,20 +44,20 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="caseIdTextField" layoutX="151.0" layoutY="176.0" />
+      <TextField fx:id="caseIdTextField" layoutX="131.0" layoutY="179.0" />
       <Label layoutX="39.0" layoutY="216.0" text="Verdict ID:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="verIdTextField" layoutX="151.0" layoutY="212.0" />
+      <TextField fx:id="verIdTextField" layoutX="131.0" layoutY="215.0" />
       <Label layoutX="39.0" layoutY="248.0" text="Verdict Type:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="verTypeCB" layoutX="151.0" layoutY="245.0" prefWidth="150.0" />
-      <Button layoutX="74.0" layoutY="321.0" mnemonicParsing="false" onAction="#saveVerDetailsButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Save Verdict Details">
+      <ComboBox fx:id="verTypeCB" layoutX="131.0" layoutY="248.0" prefWidth="150.0" />
+      <Button layoutX="74.0" layoutY="292.0" mnemonicParsing="false" onAction="#saveVerDetailsButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Save Verdict Details">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -68,11 +67,11 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="tableView" layoutX="39.0" layoutY="415.0" prefHeight="200.0" prefWidth="254.0">
+      <TableView fx:id="tableView" layoutX="39.0" layoutY="415.0" prefHeight="200.0" prefWidth="241.0">
         <columns>
-          <TableColumn fx:id="caseIdTableCol" text="Case ID" />
-          <TableColumn fx:id="verIDTableCol" prefWidth="77.59996032714844" text="Verdict ID" />
-            <TableColumn fx:id="verTypeTableCol" prefWidth="95.20001220703125" text="Verdict Type" />
+          <TableColumn fx:id="caseIdTableCol" prefWidth="72.79999160766602" text="Case ID" />
+          <TableColumn fx:id="verIDTableCol" prefWidth="74.4000244140625" text="Verdict ID" />
+            <TableColumn fx:id="verTypeTableCol" prefWidth="91.19999694824219" text="Verdict Type" />
         </columns>
       </TableView>
       <Button layoutX="653.0" layoutY="147.0" mnemonicParsing="false" onAction="#viewInPieChartButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="View in Pie Chart">
@@ -80,7 +79,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <PieChart fx:id="pieChart" layoutX="338.0" layoutY="200.0" prefHeight="367.0" prefWidth="447.0" style="-fx-border-color: black;" title="Pie Chart" />
+      <PieChart fx:id="pieChart" layoutX="348.0" layoutY="200.0" prefHeight="360.0" prefWidth="438.0" style="-fx-border-color: black;" title="Pie Chart" />
       <Button layoutX="673.0" layoutY="582.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 20; -fx-border-width: 2;" text="Return Home">
          <font>
             <Font name="System Bold" size="14.0" />

@@ -23,7 +23,7 @@
             <Image url="@../Assets/dark-blue-pattern-sscgsqdqj9hg4v45.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="42.0" layoutY="90.0" prefHeight="89.0" prefWidth="311.0" text="Welcome to       &quot;RAB Mobile Court&quot;" wrapText="true">
+      <Label layoutX="34.0" layoutY="46.0" prefHeight="89.0" prefWidth="311.0" text="Welcome to       &quot;RAB Mobile Court&quot;" wrapText="true">
          <font>
             <Font name="Tahoma Bold" size="30.0" />
          </font>
@@ -44,12 +44,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="49.0" layoutY="179.0" prefHeight="62.0" prefWidth="226.0" text="Please LogIn or SignUp to access our services" textFill="WHITE" wrapText="true">
+      <Label layoutX="48.0" layoutY="136.0" prefHeight="62.0" prefWidth="226.0" text="Please LogIn or SignUp to access our services" textFill="WHITE" wrapText="true">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="22.0" layoutY="482.0" prefHeight="54.0" prefWidth="220.0" text="To learn more about us please click here" textFill="#bfbfbf" underline="true" wrapText="true">
+      <Label layoutX="51.0" layoutY="482.0" prefHeight="54.0" prefWidth="220.0" text="To learn more about us please click here" textFill="#bfbfbf" underline="true" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
@@ -65,12 +65,12 @@
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.014210525900125504" blue="0.031578946858644485" />
+                              <Color red="0.03649122640490532" blue="0.08421052992343903" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.3451592028141022" green="0.22651071846485138" blue="0.8736842274665833" />
+                              <Color red="0.504377543926239" green="0.17711500823497772" blue="0.8105263113975525" />
                            </color>
                         </Stop>
                      </stops>
@@ -132,6 +132,11 @@
             </Label>
          </children>
       </AnchorPane>
-      <Hyperlink layoutX="103.0" layoutY="525.0" onAction="#hyperLinkClick" text="Hyperlink" textAlignment="CENTER" textFill="#00c700" underline="true" />
+      <Hyperlink layoutX="132.0" layoutY="559.0" onAction="#hyperLinkClick" text="Hyperlink" textAlignment="CENTER" textFill="#00c700" underline="true" />
+      <ImageView fitHeight="285.0" fitWidth="253.0" layoutX="35.0" layoutY="198.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Assets/Rapid_Action_Battalion_(RAB)_Emblem.svg.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
