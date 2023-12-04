@@ -51,7 +51,7 @@ public class RabReqSerWarSceneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        typeOfInstiComboBox.getItems().addAll("Educational", "Restaurant", "General Store", "Cosmetic Shop");
+        typeOfInstiComboBox.getItems().addAll("Educational", "Restaurant", "General Store", "Cosmetic Shop", "Other");
     }
 
     @FXML
