@@ -3,38 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
-            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/MagistrateDashSceneController.java</file>
-            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/RabOfficerDashSceneController.java</file>
-            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/newLogInScene.fxml</file>
-            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Undercover_Investigator_DashBoardController.java</file>
-            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/LogInSceneController.java</file>
-=======
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Request_For_Initial_SurveyController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Survey_Report.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_View_SurveyChart_SceneController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Scheedule_meeting_Scene1Controller.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Generate_Case_ReportController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Initial_Survey_ReportController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U2_CaseDetails.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Send_Emergency_AlertController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/LogInSceneController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Case_Report.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Previously_Surveyed_Institution_ListController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/DefenInfoSceneController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Make_BarChart_of_SurveyController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/MainApplication.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Make_Survey_ScheduleController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U1_CrimeRateFXMLController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Check_Survey_ScheduleController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_View_Survey_ReportController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Assigned_SurveyListController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Generate_Chart_for_CaseController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U8_Submit_Survey_ReportController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U1_NewOperation.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Assaign_Initial_SurveyController.java</file>
-            <file>file:/C:/Users/Hamida/Music/SimulatingTheOperationsOfaRabMobileCourtFinalVersionFolder/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/U7_Approve_Survey_RequestController.java</file>
->>>>>>> Stashed changes
+            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/RabReqSerWarSceneController.java</file>
+            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/ContactCourtClerkSceneController.java</file>
+            <file>file:/C:/Users/tabri/OneDrive/Documents/SimulatingTheOperationsOfaRabMobileCourtFinalVersion/CSE213_Project/SimulatingTheOperationsOfaRabMobileCourt/RabMobileCourtApplication/src/mainPkg/AnnounceVerdictSceneController.java</file>
         </group>
     </open-files>
 </project-private>
