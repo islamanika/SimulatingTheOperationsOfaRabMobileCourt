@@ -73,17 +73,21 @@ public class MagisIssueSerWarSceneController implements Initializable {
 
     @FXML
     private void loadWarReqButtonOnClick(ActionEvent event) {
-
         ObjectInputStream ois = null;
         try {
-            Search_Warrant s;
             ois = new ObjectInputStream(new FileInputStream("SerWarObjects.bin"));
-            s = (Search_Warrant) ois.readObject();
-            warReqTable.getItems().add(s);
-            s = (Search_Warrant) ois.readObject();
-            warReqTable.getItems().add(s);
-
+            while (true) {
+                Search_Warrant s = (Search_Warrant) ois.readObject();
+                if (s == null) {
+                    break; // Exit the loop when the end of the file is reached
+                }
+                warReqTable.getItems().add(s);
+            }
+        } catch (EOFException e) {
+            // End of file reached, do nothing
         } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
             try {
                 if (ois != null) {
                     ois.close();
@@ -91,7 +95,6 @@ public class MagisIssueSerWarSceneController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            ex.printStackTrace();
         }
     }
 

@@ -193,20 +193,47 @@ public class AnalyzCrimActivSceneController implements Initializable {
         // Create a new series for the chart
         XYChart.Series<String, Number> series = new XYChart.Series<>();
 
-        // Read data from the file and add it to the series
+        // Initialize variables to store accumulated occurrences for each crime type
+        int foodAdulterationOccurrences = 0;
+        int overPricedOccurrences = 0;
+        int fakeProductsOccurrences = 0;
+        int falseAdvertisementOccurrences = 0;
+
+        // Read data from the file and accumulate occurrences
         File f = new File("CrimActivityObject.bin");
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
             while (true) {
                 Criminal_Activity ca = (Criminal_Activity) ois.readObject();
-                String crimeType = ca.getCrimeType();
-                int occurrence = ca.getOccuranceAmount();  // Use getOccuranceAmount()
-                series.getData().add(new XYChart.Data<>(crimeType, occurrence));
+                int occurrence = ca.getOccuranceAmount();
+
+                // Accumulate occurrences based on crime type
+                switch (ca.getCrimeType()) {
+                    case "Food Adulteration":
+                        foodAdulterationOccurrences += occurrence;
+                        break;
+                    case "Over-Priced":
+                        overPricedOccurrences += occurrence;
+                        break;
+                    case "Fake Products":
+                        fakeProductsOccurrences += occurrence;
+                        break;
+                    case "False Advertisement":
+                        falseAdvertisementOccurrences += occurrence;
+                        break;
+                    // Add more cases for additional crime types if needed
+                }
             }
         } catch (EOFException e) {
             // End of file reached, do nothing
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(AnalyzCrimActivSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        // Add accumulated values to the series
+        series.getData().add(new XYChart.Data<>("Food Adulteration", foodAdulterationOccurrences));
+        series.getData().add(new XYChart.Data<>("Over-Priced", overPricedOccurrences));
+        series.getData().add(new XYChart.Data<>("Fake Products", fakeProductsOccurrences));
+        series.getData().add(new XYChart.Data<>("False Advertisement", falseAdvertisementOccurrences));
 
         // Add the series to the chart
         anaCriActBarChart.getData().add(series);

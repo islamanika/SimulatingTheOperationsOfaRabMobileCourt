@@ -16,6 +16,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javafx.scene.control.Alert;
+
+import javafx.fxml.FXMLLoader;
+
+import javafx.scene.control.Alert;
+
+import javafx.fxml.FXMLLoader;
+
 public class LogInSceneController implements Initializable {
 
     @FXML
