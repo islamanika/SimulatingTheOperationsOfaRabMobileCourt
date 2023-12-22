@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -59,7 +60,7 @@ public class AnalyzCrimActivSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         crimeTypeCB.getItems().addAll("Food Adulteration", "Over-Priced", "Fake Products", "False Advertisement");
 
-        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>(); //mandatory for bar chart
 
     }
 
@@ -198,7 +199,6 @@ public class AnalyzCrimActivSceneController implements Initializable {
         int overPricedOccurrences = 0;
         int fakeProductsOccurrences = 0;
         int falseAdvertisementOccurrences = 0;
-
         // Read data from the file and accumulate occurrences
         File f = new File("CrimActivityObject.bin");
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
