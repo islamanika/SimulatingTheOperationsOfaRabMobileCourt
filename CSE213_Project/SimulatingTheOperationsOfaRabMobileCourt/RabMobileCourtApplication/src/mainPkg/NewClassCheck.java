@@ -4,10 +4,6 @@
  */
 package mainPkg;
 
-/**
- *
- * @author tabri
- */
 public class NewClassCheck {
-    
+
 }

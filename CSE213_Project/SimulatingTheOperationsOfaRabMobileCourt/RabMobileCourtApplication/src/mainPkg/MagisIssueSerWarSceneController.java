@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -55,8 +56,14 @@ public class MagisIssueSerWarSceneController implements Initializable {
     @FXML
     private TextArea viewDraftTextArea;
 
-    // Declare the draftWarrant variable at the class level
     private Issued_Warrant draftWarrant;
+
+    @FXML
+    private ComboBox<String> intiTypeCB;
+    @FXML
+    private DatePicker fromDatePicker;
+    @FXML
+    private DatePicker toDatePicker;
 
     /**
      * Initializes the controller class.
@@ -69,6 +76,9 @@ public class MagisIssueSerWarSceneController implements Initializable {
         propDateOfSerCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, LocalDate>("searchDate"));
         badgeNumCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, Integer>("badgeNumber"));
         serReasCol.setCellValueFactory(new PropertyValueFactory<Search_Warrant, String>("reasonForSearch"));
+
+        intiTypeCB.getItems().addAll("Educational", "Restaurant", "General Store", "Cosmetic Shop", "Other");
+
     }
 
     @FXML
@@ -141,7 +151,6 @@ public class MagisIssueSerWarSceneController implements Initializable {
             ObjectOutputStream oos = null;
 
             try {
-                // Check if draftWarrant is not null before using it
                 if (draftWarrant != null) {
                     f = new File("IssuedWarrantObjects.bin");
                     if (f.exists()) {
@@ -153,7 +162,6 @@ public class MagisIssueSerWarSceneController implements Initializable {
                     }
                     oos.writeObject(draftWarrant);
                 } else {
-                    // Handle the case where draftWarrant is null (optional)
                     showInfoAlertAfterConfirmation("Draft Warrant is null. Please generate it before issuing.");
                 }
 
@@ -169,7 +177,7 @@ public class MagisIssueSerWarSceneController implements Initializable {
                 }
             }
         } else {
-            //show appropriate cancellation message
+
             showInfoAlertAfterConfirmation("The Data was not saved!");
         }
     }
@@ -188,4 +196,80 @@ public class MagisIssueSerWarSceneController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    @FXML
+    private void loadSpecificWarButtonOnClick(ActionEvent event) {
+
+        String selectedType = intiTypeCB.getSelectionModel().getSelectedItem();
+
+        warReqTable.getItems().clear();
+
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("SerWarObjects.bin"));
+            while (true) {
+                Search_Warrant s = (Search_Warrant) ois.readObject();
+                if (s == null) {
+                    break;
+                }
+                if (s.getInstitutionType().equals(selectedType)) {
+                    warReqTable.getItems().add(s);
+                }
+            }
+        } catch (EOFException e) {
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
+    private void loadSpecificDateWarButtonOnClick(ActionEvent event) {
+        LocalDate fromDate = fromDatePicker.getValue();
+        LocalDate toDate = toDatePicker.getValue();
+
+        if (fromDate == null || toDate == null) {
+            showValidationErrorAlert("Please select both From and To dates.");
+            return;
+        }
+
+        warReqTable.getItems().clear();
+
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("SerWarObjects.bin"));
+            while (true) {
+                Search_Warrant s = (Search_Warrant) ois.readObject();
+                if (s == null) {
+                    break;
+                }
+                LocalDate searchDate = s.getSearchDate();
+
+                if (searchDate.isAfter(fromDate.minusDays(1)) && searchDate.isBefore(toDate.plusDays(1))) {
+                    warReqTable.getItems().add(s);
+                }
+            }
+        } catch (EOFException e) {
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
