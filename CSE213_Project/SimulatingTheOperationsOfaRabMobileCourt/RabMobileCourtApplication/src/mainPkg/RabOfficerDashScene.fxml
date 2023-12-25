@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="889.0" style="-fx-background-color: #7b1fa2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPkg.RabOfficerDashSceneController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #7b1fa2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPkg.RabOfficerDashSceneController">
     <children>
         <Label layoutX="184.0" layoutY="25.0" prefHeight="66.0" prefWidth="481.0" style="-fx-background-color: #7b1fa2;" text="Welcome RAB Officer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
             <font>
